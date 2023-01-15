@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetStaticPropsType } from 'next';
+
 import Info from '@/ui/Info';
 
 export default function HomePage({ posts, projects }: InferGetStaticPropsType<typeof getStaticProps>) {
