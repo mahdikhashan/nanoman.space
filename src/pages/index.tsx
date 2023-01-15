@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetStaticPropsType } from 'next';
+import Info from '@/ui/Info';
 
 export default function HomePage({ posts, projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -18,18 +19,7 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
       <div className="space-y-8 text-white">
 
         <div className="mt-12 max-w-screen-md space-y-4">
-          <div className="inline-flex">
-            <h1 className="text-4xl md:text-6xl font-semibold text-white">Mo Khashan <span className="text-3xl cursor-pointer">🗣️</span></h1>
-          </div>
-          <p className="text-zinc-500 text-xl md:text-2xl text-left">
-            Front-end Engineer interested in how technology can enhance 
-            intuition and creativity. 
-            Experienced with <span className="text-orange-500">Javascript</span>, <span className="text-orange-500">Typescript</span>, <span className="text-orange-500">React</span>, <span className="text-orange-500">Next</span>, <span className="text-orange-500">React Native</span> and <span className="text-orange-500">HTML/CSS</span>
-            .
-          </p>
-          <p className="text-zinc-500 text-2xl">
-            As a 🥷 I&apos;ve built, developed and shipped 10+ products (with over +100K users).
-          </p>
+          <Info/>
         </div>
 
         <div className="mt-22 max-w-screen-md space-y-4">
@@ -88,15 +78,9 @@ export async function getStaticProps() {
 
       return { props: { posts: blogPosts, projects } }
     } catch (e) {
-      console.log("Could not get posts", e);
-
-      return {
-        props: {
-          posts: [],
-          projects: []
-        }
-      }
+      throw new Error("Could not get posts!");
     }
   }
-  
+
+  return { props: { posts: [], projects: [] } }
 }
