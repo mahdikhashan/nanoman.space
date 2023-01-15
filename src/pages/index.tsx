@@ -86,8 +86,6 @@ export async function getStaticProps() {
       const blogPosts = (await getPostsData()).posts
       const projects = await getCategories()
 
-      console.log(blogPosts[0].categories)
-
       return { props: { posts: blogPosts, projects } }
     } catch (e) {
       console.log("Could not get posts", e);
