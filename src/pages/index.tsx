@@ -39,6 +39,7 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
                 </div>
               </Link>
             )}
+            {!posts.length && (<div>No Blog Posts found.</div>)}
           </div>
         </div>
 
