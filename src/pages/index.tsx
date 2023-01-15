@@ -19,7 +19,7 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
 
         <div className="mt-12 max-w-screen-md space-y-4">
           <div className="inline-flex">
-            <h1 className="text-4xl md:text-6xl font-semibold text-white">Mahdi Khashan <span className="text-3xl cursor-pointer">🗣️</span></h1>
+            <h1 className="text-4xl md:text-6xl font-semibold text-white">Mo Khashan <span className="text-3xl cursor-pointer">🗣️</span></h1>
           </div>
           <p className="text-zinc-500 text-xl md:text-2xl text-left">
             Front-end Engineer interested in how technology can enhance 
