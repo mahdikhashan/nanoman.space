@@ -28,7 +28,7 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
             .
           </p>
           <p className="text-zinc-500 text-2xl">
-            As a 🥷 I've built, developed and shipped 10+ products (with over +100K users).
+            As a 🥷 I&apos;ve built, developed and shipped 10+ products (with over +100K users).
           </p>
         </div>
 
