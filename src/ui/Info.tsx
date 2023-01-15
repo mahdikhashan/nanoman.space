@@ -1,4 +1,9 @@
+import { useNinja } from "@/hooks/use-ninja"
+
 export default function Info() {
+
+  const { watah } = useNinja();
+
   return (
     <>
       <div className="inline-flex">
@@ -11,7 +16,7 @@ export default function Info() {
         .
       </p>
       <p className="text-zinc-500 text-2xl">
-        As a 🥷 I&apos;ve built, developed and shipped 10+ products (with over +100K users).
+        As a <span className="cursor-pointer" onClick={() => watah()}>🥷</span> I&apos;ve built, developed and shipped 10+ products (with over +100K users).
       </p>
     </>
   )
