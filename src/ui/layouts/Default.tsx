@@ -8,9 +8,6 @@ import Head from 'next/head'
 export default function RootLayout({ children }: { children: React.ReactNode}) {
   return (
     <html>
-      <Head>
-        <title>Home | Mo Khashan</title>
-      </Head>
       <body className="overflow-y-auto bg-zinc-900">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
