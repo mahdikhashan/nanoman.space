@@ -4,6 +4,8 @@ import '@/styles/globals.css'
 import RootLayout from '@/ui/layouts/Default'
 import type { AppProps } from 'next/app'
 
+import ErrorBoundary from '@/ui/ErrorBoundary';
+
 export default function App({ Component, pageProps }: AppProps) {
   const [showing, setShowing] = useState(false);
 
@@ -20,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
   } else {
     return (
       <RootLayout>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </RootLayout>
     )
   }
