@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { LinkProps } from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
 type Props = LinkProps & {
   text: string,
@@ -11,7 +11,7 @@ const CustomLink = ({ text, href, alt="custom link", ...props }: Props): JSX.Ele
   return (
     <>
       <div className="inline-flex underline cursor-pointer">
-        <a href={href} {...props}>{text}</a>
+        <Link href={href} {...props}>{text}</Link>
         <Image
           src="/link.png"
           unoptimized

@@ -4,9 +4,10 @@ import { header } from '@/lib/header';
 import { Turn as Hamburger } from 'hamburger-react'
 
 import clsx from 'clsx';
+
 import { usePathname } from 'next/navigation';
+
 import Link from 'next/link';
-import CustomLink from './CustomLink';
 
 export default function Header() {
   const pathname = usePathname();
@@ -59,19 +60,21 @@ export default function Header() {
                       { 'text-zinc-500': !isActive },
                     )}
                     >
-                      {link.name}
+                    {link.name}
                   </Link>
                 }
                 {
                 link?.redirect && 
-                  <CustomLink
-                    text={link.name}
-                    href={`/${link.slug}`}
+                  <Link
+                    href={link.slug}
+                    passHref={true}
                     className={clsx(
                       "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
                       { 'text-zinc-500': !isActive },
                     )}
-                  />
+                  >
+                    {link.name}
+                  </Link>
                 }
               </div>)
             );
