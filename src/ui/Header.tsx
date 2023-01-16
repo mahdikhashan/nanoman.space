@@ -68,6 +68,7 @@ export default function Header() {
                   <Link
                     href={link.slug}
                     passHref={true}
+                    target={"_blank"}
                     className={clsx(
                       "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
                       { 'text-zinc-500': !isActive },
