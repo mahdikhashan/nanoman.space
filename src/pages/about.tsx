@@ -19,7 +19,8 @@ export default function AboutPage() {
               I enjoy building software solutions, communicating with people and contributing to the open-sourse projects.
               <br/>
               <br/>
-              Interested in Design Systems, I care about user-experience and I love to create highly convertible landing pages.
+              Interested in Design Systems, I care about user-experience and I love to create high-conversion landing pages.
+              <br/>
               <br/>
               In my free time, I create tools for my personal use-cases and share them with the community.
               <br/>
