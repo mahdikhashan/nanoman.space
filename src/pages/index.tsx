@@ -15,8 +15,8 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-      <div className="space-y-6">
+      <main className='font-mono'>
+        <div className="space-y-6">
       <div className="space-y-8 text-white">
 
         <div className="mt-12 max-w-screen-md space-y-4">
@@ -64,7 +64,7 @@ export default function HomePage({ posts, projects }: InferGetStaticPropsType<ty
         </div>
         
       </div>
-    </div>
+        </div>
       </main>
     </>
   )

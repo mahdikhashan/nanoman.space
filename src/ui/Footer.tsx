@@ -4,7 +4,7 @@ export default function Footer() {
   const d = new Date();
 
   return (
-    <div className="justify-center md:inline-flex text-sm text-zinc-600">
+    <div className="justify-center md:inline-flex text-sm text-zinc-600 font-mono">
       <p className='flex-row md:flex'>
         <span>{'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mo Khashan. All Rights Reserved.</span>
         <span className='flex md:block'>

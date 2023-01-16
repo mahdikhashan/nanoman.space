@@ -6,6 +6,7 @@ import { Turn as Hamburger } from 'hamburger-react'
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import CustomLink from './CustomLink';
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative md:inline-flex">
+      <div className="relative md:inline-flex font-mono">
         <div 
           onClick={() => setOpen(!isOpen)}
           className={clsx(
@@ -49,15 +50,29 @@ export default function Header() {
 
             return (!link?.isDisabled &&
               (<div key={link.name}>
-                <Link
-                  href={`/${link.slug}`}
-                  className={clsx(
-                    "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
-                    { 'text-zinc-500': !isActive },
-                  )}
-                  >
-                    {link.name}
+                {
+                !link?.redirect && 
+                  <Link
+                    href={`/${link.slug}`}
+                    className={clsx(
+                      "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
+                      { 'text-zinc-500': !isActive },
+                    )}
+                    >
+                      {link.name}
                   </Link>
+                }
+                {
+                link?.redirect && 
+                  <CustomLink
+                    text={link.name}
+                    href={`/${link.slug}`}
+                    className={clsx(
+                      "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
+                      { 'text-zinc-500': !isActive },
+                    )}
+                  />
+                }
               </div>)
             );
           })}
