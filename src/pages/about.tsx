@@ -1,3 +1,4 @@
+import CustomLink from '@/ui/CustomLink'
 import Head from 'next/head'
 
 export default function AboutPage() {
@@ -9,6 +10,25 @@ export default function AboutPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main>
+        <div className="space-y-8 text-zinc-300 font-mono">
+          <div className="mt-12 max-w-screen-md space-y-4">
+            <p className='text-2xl'>
+              Hey 👋, I&apos;m Mo Khashan. Frontend Developer on a career change, previously worked for a series-A fintech startup and a swiss web agency. 
+              <br/>
+              I enjoy building software solutions, communicating with people and contributing to the open-sourse projects.
+              <br/>
+              <br/>
+              Interested in Design Systems, I care about user-experience and I love to create highly convertible landing pages.
+              <br/>
+              In my free time, I create tools for my personal use-cases and share them with the community.
+              <br/>
+              <br/>
+              Away from the screen and keyboard, I spend my time on travelling and being outdoor, so far I have visited +20 cities and 3 countries 🇮🇷 🇹🇷 🇦🇪.
+            </p>            
+          </div>
+        </div>
+      </main>
     </>
   )
 }
