@@ -55,6 +55,7 @@ export default function Header() {
                   <Link
                     href={!link?.redirect ? `/${link.slug}` : link.slug}
                     passHref={link?.redirect && true}
+                    target={link?.redirect ? "_blank" : "_self"}
                     className={clsx(
                       "flex items-baseline gap-1 mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
                       { 'text-zinc-500 hover:text-zinc-100': !isActive },
