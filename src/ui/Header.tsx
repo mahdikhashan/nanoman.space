@@ -70,7 +70,7 @@ export default function Header() {
                     passHref={true}
                     target={"_blank"}
                     className={clsx(
-                      "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
+                      "flex items-baseline gap-1 mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
                       { 'text-zinc-500': !isActive },
                     )}
                   >
