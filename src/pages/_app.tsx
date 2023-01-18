@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'next-themes'
 
+import "tailwindcss/tailwind.css";
 import '@/styles/globals.css'
 import RootLayout from '@/ui/layouts/Default'
 import type { AppProps } from 'next/app'
@@ -23,7 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
       <RootLayout>
         <ErrorBoundary>
-          <Component {...pageProps} />
+          <ThemeProvider enableSystem={true} attribute="class">
+            <Component {...pageProps} />
+          </ThemeProvider>
         </ErrorBoundary>
       </RootLayout>
     )

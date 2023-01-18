@@ -6,8 +6,8 @@ import Header from '../Header';
 export default function RootLayout({ children }: { children: React.ReactNode}) {
   return (
     <html>
-      <body className="overflow-y-auto bg-zinc-900">
-        <div className="container mx-auto">
+      <main className="min-h-screen mx-auto overflow-y-auto dark:bg-zinc-900">
+        <div className="container mx-auto flex-grow">
           <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
             <div className="row-start-1">
               <Header />
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode}) {
             </div>
           </div>
         </div>
-      </body>
+      </main>
     </html>
   );
 }

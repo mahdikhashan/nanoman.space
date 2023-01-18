@@ -1,13 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { header } from '@/lib/header';
-import { Turn as Hamburger } from 'hamburger-react'
+import { Turn as Hamburger } from 'hamburger-react';
 
 import clsx from 'clsx';
 
 import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
+
+import { useTheme } from 'next-themes';
+
+const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  return (
+    <select value={theme} onChange={e => setTheme(e.target.value)}>
+      <option value="system">System</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  )
+}
 
 export default function Header() {
   const pathname = usePathname();
@@ -45,7 +68,7 @@ export default function Header() {
             );
           })}
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex justify-between">
           {header.map((link) => {
             const isActive = link.slug === pathname
 
@@ -68,6 +91,7 @@ export default function Header() {
               </div>)
             );
           })}
+          <ThemeSwitch />
         </div>
       </div>
     </>
