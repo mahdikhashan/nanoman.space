@@ -17,5 +17,9 @@ export function useNinja() {
     { volume: 1 }
   )
 
-  return {ninja, watah, hawa}
+  const allSound = [ninja, watah, hawa];
+
+  const randomSound = allSound[Math.floor(Math.random() * allSound.length)]
+
+  return {ninja, watah, hawa, randomSound, allSound}
 }
