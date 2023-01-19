@@ -14,8 +14,7 @@ export default function Post({
   return (
     <>
       <p>slug: {slug}</p>
-      <div>
-        {post.url}
+      <div className='max-w-screen-md'>
         <div className="prose" dangerouslySetInnerHTML={{ __html: post.body }} />
       </div>
     </>
