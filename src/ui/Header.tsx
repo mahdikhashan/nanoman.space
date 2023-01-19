@@ -38,12 +38,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative md:inline-flex font-mono">
-        <div 
+      <div className="relative md:flex font-mono">
+        <div
           onClick={() => setOpen(!isOpen)}
           className={clsx(
-            "md:hidden cursor-pointer transition-height transition-slowest ease fixed top-4", 
-            "left-4 right-4 z-10 text-white bg-zinc-800 border-2 p-2 rounded-2xl",
+            "md:hidden !p-y-4 cursor-pointer fixed top-4", 
+            "left-4 right-4 z-10 text-white bg-zinc-800 border-2 rounded-2xl",
             { 'h-18 border-white text-white': !isOpen, 'border-orange-500 text-orange-500': isOpen },
           )}>
           <div className='flex items-center'>
@@ -54,11 +54,11 @@ export default function Header() {
             const isActive = link.slug === pathname
 
             return (!link?.isDisabled &&
-              (<div key={link.name} className={"p-2"}>
+              (<div key={link.name}>
                 <Link
                   href={`/${link.slug}`}
                   className={clsx(
-                    "mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
+                    "flex mb-2 px-3 text-s m-2 font-semibold p-1 hover:bg-orange-500 hover:text-white uppercase tracking-wider text-orange-500",
                     { 'text-zinc-500': !isActive },
                   )}
                   >
@@ -68,7 +68,7 @@ export default function Header() {
             );
           })}
         </div>
-        <div className="hidden md:flex justify-between">
+        <div className="hidden md:inline-flex">
           {header.map((link) => {
             const isActive = link.slug === pathname
 
@@ -94,7 +94,6 @@ export default function Header() {
               </div>)
             );
           })}
-          <ThemeSwitch />
         </div>
       </div>
     </>
