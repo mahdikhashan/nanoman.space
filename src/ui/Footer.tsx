@@ -1,14 +1,27 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { BsLinkedin, BsGithub } from 'react-icons/bs'
 
 export default function Footer() {
   const d = new Date();
 
   return (
-    <div className="justify-center md:inline-flex text-sm text-zinc-600 font-mono">
-      <p className='flex-row md:flex'>
+    <>
+      <div className='flex flex-col md:flex-row items-center md:justify-between text-sm text-zinc-600 w-full'>
         <span>{'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mo Khashan. All Rights Reserved.</span>
-        <span className='flex md:block'>
-          Created by the &nbsp;<b>Next.js</b>&nbsp; and 
+        <div id="social-media-link" className='hidden md:flex flex-row gap-4'>
+          <Link href={"https://www.linkedin.com/in/mahdikhashan/"} passHref>
+            <BsLinkedin className='hover:text-white text-2xl' />
+          </Link>
+          <Link href={"https://github.com/mahdikhashan"} passHref>
+            <BsGithub className='hover:text-white text-2xl' />
+          </Link>
+        </div>
+        <span className='flex flex-row'>
+          <p>
+            Created by the &nbsp;<b>Next.js</b>&nbsp; and 
+          </p>
           &nbsp;
           <Image
             src="/butter-w.png"
@@ -18,27 +31,17 @@ export default function Footer() {
             height={0}
           />
           {'.'}
-          &nbsp;
         </span>
-      </p>
-      <p>
-        <a
-          className="underline decoration-dotted underline-offset-4"
-          href="https://github.com/vercel/next.js/examples/with-turbopack"
-        >
-          View the code
-        </a>&nbsp;
-        {' or '}
-        &nbsp;
-        <a
-          className="underline decoration-dotted underline-offset-4"
-          href="https://vercel.com/templates/next.js"
-        >
-          deploy your own
-        </a>
-        {'.'}
-      </p>
-    </div>
+        <div id="social-media-link" className='md:hidden flex flex-row gap-4'>
+          <Link href={"https://www.linkedin.com/in/mahdikhashan/"} passHref>
+            <BsLinkedin className='hover:text-white text-2xl' />
+          </Link>
+          <Link href={"https://github.com/mahdikhashan"} passHref>
+            <BsGithub className='hover:text-white text-2xl' />
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
 
