@@ -41,12 +41,14 @@ export const header: Item[] = [
   {
     name: 'LinkedIn',
     slug: 'https://www.linkedin.com/in/mahdikhashan/',
-    redirect: true
+    redirect: true,
+    isDisabled: true
   },
   {
     name: 'Github',
     slug: 'https://github.com/mahdikhashan',
-    redirect: true
+    redirect: true,
+    isDisabled: true
   },
   {
     name: 'Twitter',
