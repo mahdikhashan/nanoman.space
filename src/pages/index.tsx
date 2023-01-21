@@ -1,5 +1,9 @@
 // TODO: fix forced left-margin
 
+import { Suspense } from "react";
+
+import { Post } from "@/lib/types";
+
 import Link from "next/link";
 
 import { getCategories, getPostsData } from "@/lib/api";
@@ -7,7 +11,6 @@ import { InferGetStaticPropsType } from "next";
 
 import Info from "@/ui/Info";
 import Container from "@/ui/Container";
-import { Suspense } from "react";
 
 export default function HomePage({
   posts,
@@ -28,7 +31,7 @@ export default function HomePage({
               </h1>
               <Suspense fallback={null}>
                 <div className="flex flex-col divide-y-[1px] divide-zinc-700">
-                  {posts.map((post: any) => (
+                  {posts.map((post) => (
                     <Link
                       key={post.slug}
                       href={{
@@ -82,7 +85,7 @@ export async function getStaticProps() {
 
   if (butterToken) {
     try {
-      const blogPosts = (await getPostsData()).posts;
+      const blogPosts: Post[] = (await getPostsData()).posts;
       const projects = await getCategories();
 
       return { props: { posts: blogPosts, projects } };

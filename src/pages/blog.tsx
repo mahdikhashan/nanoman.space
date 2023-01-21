@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Post } from "@/lib/types";
+
 import { getCategories, getPostsData } from "@/lib/api";
 import { InferGetStaticPropsType } from "next";
 
@@ -38,7 +40,7 @@ export default function BlogPage({
               </h1>
               <Suspense fallback={null}>
                 <div className="flex flex-col divide-y-[1px] divide-zinc-700">
-                  {posts.map((post: any) => (
+                  {posts.map((post) => (
                     <Link
                       key={post.slug}
                       href={{
@@ -47,9 +49,13 @@ export default function BlogPage({
                       }}
                       className="flex flex-row py-4 justify-between hover:text-orange-500"
                     >
-                      <div>{post.title}</div>
+                      <div className="flex flex-col gap-3">
+                        <span className="font-bold">{post.title}</span>
+                        <span className="text-zinc-600">{post.summary}</span>
+                      </div>
                       <div className="text-zinc-500">
-                        {post.categories.map((category: any) => category.name)}
+                        {/* {post.categories.map((category: any) => category.name)} */}
+                        {Math.floor(Math.random() * 100)} Views
                       </div>
                     </Link>
                   ))}
@@ -63,20 +69,26 @@ export default function BlogPage({
                 All Posts
               </h1>
               <Suspense fallback={null}>
-                <div className="flex-col space-y-2">
-                  {projects.map((project: any) => (
+                <div className="flex flex-col divide-y-[1px] divide-zinc-700">
+                  {posts.map((post) => (
                     <Link
-                      href={`/`}
-                      key={project}
-                      className="block space-y-1.5 rounded-lg border border-black/10 dark:border-white/10 px-4 py-3 hover:border-black/20 dark:hover:border-white/20 dark:bg-zinc-800 bg-white"
+                      key={post.slug}
+                      href={{
+                        pathname: "/blog/[slug]",
+                        query: { slug: post.slug },
+                      }}
+                      className="flex flex-row py-4 justify-between hover:text-orange-500"
                     >
-                      <div>{project.name}</div>
-                      <div className="line-clamp-3 text-sm text-zinc-400">
-                        {project.slug}
+                      <div className="flex flex-col gap-3">
+                        <span className="font-bold">{post.title}</span>
+                        <span className="text-zinc-600">{post.summary}</span>
+                      </div>
+                      <div className="text-zinc-500">
+                        {post.categories.map((category: any) => category.name)}
                       </div>
                     </Link>
                   ))}
-                  {!projects.length && <div>No Posts found.</div>}
+                  {!posts.length && <div>No Popular Posts found.</div>}
                 </div>
               </Suspense>
             </div>
@@ -92,7 +104,7 @@ export async function getStaticProps() {
 
   if (butterToken) {
     try {
-      const blogPosts = (await getPostsData()).posts;
+      const blogPosts: Post[] = (await getPostsData()).posts;
       const projects = await getCategories();
 
       return { props: { posts: blogPosts, projects } };
