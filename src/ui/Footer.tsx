@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row mb-16 md:mb-4 gap-2 items-center md:justify-between text-sm text-zinc-600 w-full">
+      <div className="flex flex-col text-xs md:flex-row mb-16 md:mb-4 gap-2 !items-center md:justify-between text-zinc-600 w-full">
         <span>
           {"©"} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All
           Rights Reserved.
@@ -38,7 +38,7 @@ export default function Footer() {
             <BsGithub className="hover:text-white text-2xl" />
           </Link>
         </div>
-        <span className="flex flex-row">
+        <span className="flex flex-row items-center">
           <p>
             Created by the &nbsp;<b>Next.js</b>&nbsp; and
           </p>
