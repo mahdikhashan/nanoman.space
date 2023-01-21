@@ -1,3 +1,5 @@
+import { PropsWithChildren } from "react";
+
 import Head from "next/head";
 import { useRouter } from "next/router";
 
@@ -5,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 
-export default function Container(props: { children: any; customMeta?: any; }) {
+export default function Container(props) {
   const router = useRouter();
   const { children, customMeta } = props
   const meta = {
