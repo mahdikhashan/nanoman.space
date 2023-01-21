@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 
-export default function Container(props) {
+export default function Container(props: { children: any; customMeta?: any; }) {
   const router = useRouter();
   const { children, customMeta } = props
   const meta = {
@@ -49,7 +49,6 @@ export default function Container(props) {
               <Header />
             </div>
             <div className="row-start-2 mt-12 space-x-6">{children}</div>
-
             <div className="row-start-3 row-end-4 mt-20 flex items-center justify-center">
               <Footer />
             </div>

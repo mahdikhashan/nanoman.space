@@ -1,6 +1,5 @@
 // TODO: fix forced left-margin
 
-import Head from "next/head";
 import Link from "next/link";
 
 import { getCategories, getPostsData } from "@/lib/api";
@@ -8,21 +7,12 @@ import { InferGetStaticPropsType } from "next";
 
 import Info from "@/ui/Info";
 import Container from "@/ui/Container";
-import { Suspense, useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import clsx from "clsx";
-
+import { Suspense } from "react";
 
 export default function HomePage({
   posts,
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
-
   return (
     <>
       <Container>
