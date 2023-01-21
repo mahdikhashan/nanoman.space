@@ -41,7 +41,7 @@ export default function Container(props: { children: any; customMeta?: any; }) {
 
       <main
         id="skip"
-        className="min-h-screen mx-auto overflow-y-auto bg-gray-100 dark:bg-zinc-800"
+        className="min-h-screen mx-auto overflow-y-auto max-w-4xl bg-gray-100 dark:bg-zinc-800 font-mono"
       >
         <div className="container mx-auto flex-grow">
           <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
