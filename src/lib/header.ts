@@ -18,7 +18,8 @@ export const header: Item[] = [
   },
   {
     name: 'About',
-    slug: '/about'
+    slug: '/about',
+    isDisabled: true
   },
   {
     name: 'Projects',
