@@ -1,26 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 
 import Header from "./Header";
 import Footer from "./Footer";
 
-type ContainerProps = {
-  children: React.ReactNode;
-  customMeta?: {
-    date?: any;
-  };
-};
 
-export default function Container({ children, customMeta }: ContainerProps) {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
-
+export default function Container(props) {
   const router = useRouter();
+  const { children, customMeta } = props
   const meta = {
     title: "Mohi Khashan | Front-end Engineer.",
     description: `Front-end developer, JavaScript enthusiast, and course creator.`,
@@ -30,7 +17,7 @@ export default function Container({ children, customMeta }: ContainerProps) {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-zinc-800">
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -52,25 +39,23 @@ export default function Container({ children, customMeta }: ContainerProps) {
         )}
       </Head>
 
-      
-      <div className="container mx-auto flex-grow">
-        <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
-          <div className="row-start-1">
-            <Header />
-          </div>
-          <div className="row-start-2 mt-12 space-x-6">{children}</div>
+      <main
+        id="skip"
+        className="min-h-screen mx-auto overflow-y-auto dark:bg-zinc-800"
+      >
+        <div className="container mx-auto flex-grow">
+          <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
+            <div className="row-start-1">
+              <Header />
+            </div>
+            <div className="row-start-2 mt-12 space-x-6">{children}</div>
 
-          <div className="row-start-3 row-end-4 mt-20 flex items-center justify-center">
-            <Footer />
+            <div className="row-start-3 row-end-4 mt-20 flex items-center justify-center">
+              <Footer />
+            </div>
           </div>
         </div>
-      </div>
-      {/* <main
-        id="skip"
-        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
-      >
-        {children}
-      </main> */}
-    </div>
+      </main>
+    </>
   );
 }
