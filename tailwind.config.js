@@ -3,11 +3,11 @@ module.exports = {
   important: true,
   darkMode: 'class',
   content: [
-    "./**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx}",
   ],
   purge: {
-    enabled: true,
-    content: ['./**/*.tsx'],
+    content: ['./src/pages/**/*.{js,jsx,ts,tsx}', './src/ui/**/*.{js,jsx,ts,tsx}', './next.config.js'],
   },
   theme: {
     extend: {

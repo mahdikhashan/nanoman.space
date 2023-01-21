@@ -1,4 +1,4 @@
-import { useNinja } from "hooks/use-ninja";
+import { useNinja } from "@/hooks/use-ninja";
 
 export default function Info() {
   const { allSound } = useNinja();
