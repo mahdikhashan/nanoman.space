@@ -58,7 +58,7 @@ export default function HomePage({
                     <Link
                       href={`/`}
                       key={project}
-                      className="block space-y-1.5 rounded-lg border border-black/10 dark:border-white/10 px-4 py-3 hover:border-white/20 dark:bg-zinc-800 bg-white"
+                      className="block space-y-1.5 rounded-lg border border-black/10 dark:border-white/10 px-4 py-3 hover:border-black/20 dark:hover:border-white/20 dark:bg-zinc-800 bg-white"
                     >
                       <div>{project.name}</div>
                       <div className="line-clamp-3 text-sm text-zinc-400">
