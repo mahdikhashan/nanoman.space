@@ -22,6 +22,10 @@ export const header: Item[] = [
     isDisabled: true
   },
   {
+    name: 'Blog',
+    slug: '/blog'
+  },
+  {
     name: 'Projects',
     slug: '/projects',
     items: [
