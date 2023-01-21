@@ -1,10 +1,27 @@
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { useTheme } from "next-themes";
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 export default function Footer() {
   const d = new Date();
+
+  const [mounted, setMounted] = useState(false);
+
+  const { resolvedTheme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
@@ -27,7 +44,7 @@ export default function Footer() {
           </p>
           &nbsp;
           <Image
-            src="/butter-w.png"
+            src={resolvedTheme === "dark" ? "/butter-w.png" : "/butter-b.png"}
             unoptimized
             alt="Butter CMS"
             width={100}
