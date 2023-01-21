@@ -3,11 +3,11 @@ module.exports = {
   important: true,
   darkMode: 'class',
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./**/*.{js,ts,jsx,tsx}",
   ],
   purge: {
     enabled: true,
-    content: ['./src/**/*.tsx'],
+    content: ['./**/*.tsx'],
   },
   theme: {
     extend: {

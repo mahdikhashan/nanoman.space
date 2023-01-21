@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       <div className='flex flex-col md:flex-row mb-16 md:mb-4 gap-2 items-center md:justify-between text-sm text-zinc-600 w-full'>
-        <span>{'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mo Khashan. All Rights Reserved.</span>
+        <span>{'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All Rights Reserved.</span>
         <div id="social-media-link" className='hidden md:flex flex-row gap-4'>
           <Link href={"https://www.linkedin.com/in/mahdikhashan/"} passHref>
             <BsLinkedin className='hover:text-white text-2xl' />
@@ -33,10 +33,10 @@ export default function Footer() {
           {'.'}
         </span>
         <div id="social-media-link" className='md:hidden flex flex-row gap-4'>
-          <Link href={"https://www.linkedin.com/in/mahdikhashan/"} passHref>
+          <Link href={"https://www.linkedin.com/in/mohi-k/"} passHref>
             <BsLinkedin className='hover:text-white text-2xl' />
           </Link>
-          <Link href={"https://github.com/mahdikhashan"} passHref>
+          <Link href={"https://github.com/mohi-k"} passHref>
             <BsGithub className='hover:text-white text-2xl' />
           </Link>
         </div>
