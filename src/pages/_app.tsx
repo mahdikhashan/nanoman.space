@@ -1,11 +1,12 @@
+import "@/styles/globals.css";
+
+import type { AppProps } from "next/app";
+
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "next-themes";
 
-import "@/styles/globals.css";
-import RootLayout from "@/layouts/Default";
-import type { AppProps } from "next/app";
+import { Analytics } from '@vercel/analytics/react';
 
-import ErrorBoundary from "@/ui/ErrorBoundary";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [showing, setShowing] = useState(false);
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
       <ThemeProvider enableSystem={true} attribute="class">
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     );
   }
