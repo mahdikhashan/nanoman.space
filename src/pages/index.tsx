@@ -27,8 +27,8 @@ export default function HomePage({
     <>
       <Container>
         <div className="space-y-6">
-          <div className="space-y-8 text-white">
-            <div className="mt-12 max-w-screen-md space-y-4 dark:bg-red-200">
+          <div className="space-y-8">
+            <div className="mt-12 max-w-screen-md space-y-4">
               <Info />
             </div>
 
