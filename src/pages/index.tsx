@@ -1,20 +1,15 @@
-// TODO: fix forced left-margin
+import { Suspense } from 'react';
+import Link from 'next/link';
+import { getCategories, getPostsData } from '@/lib/api';
+import { InferGetStaticPropsType } from 'next';
 
-import { Suspense } from "react";
-
-import { Post } from "@/lib/types";
-
-import Link from "next/link";
-
-import { getCategories, getPostsData } from "@/lib/api";
-import { InferGetStaticPropsType } from "next";
-
-import Info from "@/ui/Info";
-import Container from "@/ui/Container";
+import Info from '@/ui/Info';
+import Container from '@/ui/Container';
+import { Post } from '@/lib/types';
 
 export default function HomePage({
   posts,
-  projects,
+  projects
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -35,8 +30,8 @@ export default function HomePage({
                     <Link
                       key={post.slug}
                       href={{
-                        pathname: "/blog/[slug]",
-                        query: { slug: post.slug },
+                        pathname: '/blog/[slug]',
+                        query: { slug: post.slug }
                       }}
                       className="flex flex-row py-4 justify-between hover:text-orange-500"
                     >
