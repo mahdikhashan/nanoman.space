@@ -1,18 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Post } from "@/lib/types";
+import { Post } from '@/lib/types';
 
-import { getCategories, getPostsData } from "@/lib/api";
-import { InferGetStaticPropsType } from "next";
+import { getCategories, getPostsData } from '@/lib/api';
+import { InferGetStaticPropsType } from 'next';
 
-import { BsSearch } from "react-icons/bs";
-import Container from "@/ui/Container";
-import { Suspense } from "react";
+import { BsSearch } from 'react-icons/bs';
+import Container from '@/ui/Container';
+import { Suspense, useState } from 'react';
 
 export default function BlogPage({
   posts,
-  projects,
+  projects
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [searchValue, setSearchValue] = useState('');
+  const filteredBlogPosts = posts.filter((post) => {
+    post.title.toLowerCase().includes(searchValue.toLowerCase())
+  })
+
   return (
     <>
       <Container>
@@ -30,6 +35,7 @@ export default function BlogPage({
                   placeholder="Search for posts..."
                   type="text"
                   name="search"
+                  onChange={(e) => setSearchValue(e.target.value)}
                 />
               </label>
             </div>
@@ -44,8 +50,8 @@ export default function BlogPage({
                     <Link
                       key={post.slug}
                       href={{
-                        pathname: "/blog/[slug]",
-                        query: { slug: post.slug },
+                        pathname: '/blog/[slug]',
+                        query: { slug: post.slug }
                       }}
                       className="flex flex-row py-4 justify-between hover:text-orange-500"
                     >
@@ -74,8 +80,8 @@ export default function BlogPage({
                     <Link
                       key={post.slug}
                       href={{
-                        pathname: "/blog/[slug]",
-                        query: { slug: post.slug },
+                        pathname: '/blog/[slug]',
+                        query: { slug: post.slug }
                       }}
                       className="flex flex-row py-4 justify-between hover:text-orange-500"
                     >
