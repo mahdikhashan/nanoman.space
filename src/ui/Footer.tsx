@@ -1,11 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
-import Image from "next/image";
-import Link from "next/link";
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 
-import { useTheme } from "next-themes";
-
-import { BsLinkedin, BsGithub } from "react-icons/bs";
+const ExternalLink = ({ href, children }) => {
+  return (
+    <a
+      className="text-gray-500 hover:text-gray-600 transition"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={href}
+    >
+      {children}
+    </a>
+  );
+};
 
 export default function Footer() {
   const d = new Date();
@@ -27,16 +37,16 @@ export default function Footer() {
     <>
       <div className="flex flex-col text-xs md:flex-row mb-16 md:mb-4 gap-2 !items-center md:justify-between text-zinc-600 w-full">
         <span>
-          {"©"} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All
+          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All
           Rights Reserved.
         </span>
         <div id="social-media-link" className="hidden md:flex flex-row gap-4">
-          <Link href={"https://www.linkedin.com/in/mahdikhashan/"} passHref>
+          <ExternalLink href={'https://www.linkedin.com/in/mohi-k/'}>
             <BsLinkedin className="hover:text-white text-2xl" />
-          </Link>
-          <Link href={"https://github.com/mahdikhashan"} passHref>
+          </ExternalLink>
+          <ExternalLink href={'https://github.com/mohi-k'}>
             <BsGithub className="hover:text-white text-2xl" />
-          </Link>
+          </ExternalLink>
         </div>
         <span className="flex flex-row items-center">
           <p>
@@ -44,21 +54,21 @@ export default function Footer() {
           </p>
           &nbsp;
           <Image
-            src={resolvedTheme === "dark" ? "/butter-w.png" : "/butter-b.png"}
+            src={resolvedTheme === 'dark' ? '/butter-w.png' : '/butter-b.png'}
             unoptimized
             alt="Butter CMS"
             width={100}
             height={0}
           />
-          {"."}
+          {'.'}
         </span>
         <div id="social-media-link" className="md:hidden flex flex-row gap-4">
-          <Link href={"https://www.linkedin.com/in/mohi-k/"} passHref>
+          <ExternalLink href={'https://www.linkedin.com/in/mohi-k/'}>
             <BsLinkedin className="hover:text-white text-2xl" />
-          </Link>
-          <Link href={"https://github.com/mohi-k"} passHref>
+          </ExternalLink>
+          <ExternalLink href={'https://github.com/mohi-k'}>
             <BsGithub className="hover:text-white text-2xl" />
-          </Link>
+          </ExternalLink>
         </div>
       </div>
     </>
