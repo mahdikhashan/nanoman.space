@@ -8,6 +8,7 @@
     "start": "next start",
     "cypress-install": "cypress install",
     "cypress-open": "cypress open",
+    "test:unit:watch": "jest --watch",
     "test:unit": "echo 'unit tests running'",
     "test:e2e": "echo 'e2e tests running'",
     "lint": "next lint"
@@ -35,8 +36,12 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "autoprefixer": "^10.4.13",
     "cypress": "^12.3.0",
+    "jest": "^29.4.0",
+    "jest-environment-jsdom": "^29.4.0",
     "postcss": "^8.4.21",
     "prisma": "^4.9.0",
     "tailwindcss": "^3.2.4"
