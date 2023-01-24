@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { Container } from '@/ui/Container';
+import Container from '@/ui/Container';
 
 import { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router'
