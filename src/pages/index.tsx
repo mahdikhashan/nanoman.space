@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+
 import Link from 'next/link';
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetServerSidePropsType } from 'next';
@@ -6,11 +7,11 @@ import { InferGetServerSidePropsType } from 'next';
 import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
 import Container from '@/ui/Container';
-import { Post } from '@/lib/types';
+import { Category, Post } from '@/lib/types';
 
 export default function HomePage({
   posts,
-  projects,
+  projects
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
@@ -40,10 +41,10 @@ export default function HomePage({
               </h1>
               <Suspense fallback={null}>
                 <div className="flex-col space-y-2">
-                  {projects.map((project: any) => (
+                  {projects.map((project) => (
                     <Link
                       href={`/`}
-                      key={project}
+                      key={project.slug}
                       className="block space-y-1.5 rounded-lg border border-black/10 dark:border-white/10 px-4 py-3 hover:border-black/20 dark:hover:border-white/20 dark:bg-zinc-800 bg-white"
                     >
                       <div>{project.name}</div>
@@ -66,14 +67,39 @@ export default function HomePage({
 export async function getServerSideProps() {
   const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
 
-  if (butterToken) {
+  // const res = await fetch('https://mo.nanoman.space/api/get-jokes')
+  // const data = await res.status
+
+  // console.log(data);
+
+  // Server-side requests are mocked by `mocks/server.ts`.
+  // const res = await fetch('https://mo.nanoman.space/api/get-jokes')
+  // const book = await res.json()
+
+  const env = process.env.NODE_ENV;
+  if (env == 'development' || 'test') {
     try {
-      const blogPosts = (await getPostsData()).posts;
-      const projects = await getCategories();
+      const blogPosts: Post[] = await (
+        await fetch('http://localhost:3000/posts')
+      ).json();
+      const projects: Category[] = await (
+        await fetch('http://localhost:3000/projects')
+      ).json();
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
-      throw new Error("Could not get posts!");
+      throw new Error('Could not get posts!');
+    }
+  } else if (env == 'production') {
+    if (butterToken) {
+      try {
+        const blogPosts: Post[] = (await getPostsData()).posts;
+        const projects: Category[] = await getCategories();
+
+        return { props: { posts: blogPosts, projects } };
+      } catch (e) {
+        throw new Error('Could not get posts!');
+      }
     }
   }
 
