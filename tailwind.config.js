@@ -5,10 +5,8 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/ui/**/*.{js,ts,jsx,tsx}",
+    "./next.config.js"
   ],
-  purge: {
-    content: ['./src/pages/**/*.{js,jsx,ts,tsx}', './src/ui/**/*.{js,jsx,ts,tsx}', './next.config.js'],
-  },
   theme: {
     extend: {
       transitionProperty: {

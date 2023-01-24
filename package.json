@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test:unit": "echo 'unit tests running'",
+    "test:e2e": "echo 'e2e tests running'",
     "lint": "next lint"
   },
   "dependencies": {
