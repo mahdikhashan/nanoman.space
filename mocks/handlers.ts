@@ -1,11 +1,16 @@
 import { rest } from 'msw';
 import { Post } from '@/lib/types';
 
+const butterCMS = (path) => {
+  return new URL(path, 'https://api.buttercms.com/v2').toString()
+}
+
 export const handlers = [
-  rest.get('https://my.backend/book', (_req, res, ctx) => {
+  // Post List
+  rest.get(butterCMS('/posts/'), (_req, res, ctx) => {
     return res(
       ctx.json<Pick<Post, 'slug'>>({
-        slug: 'example'
+        slug: 'example-mock-data'
       })
     );
   })

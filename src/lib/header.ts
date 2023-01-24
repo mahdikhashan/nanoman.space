@@ -14,20 +14,20 @@ type Item = {
 export const header: Item[] = [
   {
     name: 'Home',
-    slug: '/'
+    slug: ''
   },
   {
     name: 'About',
-    slug: '/about',
+    slug: 'about',
     isDisabled: true
   },
   {
     name: 'Blog',
-    slug: '/blog'
+    slug: 'blog'
   },
   {
     name: 'Projects',
-    slug: '/projects',
+    slug: 'projects',
     items: [
       {
         name: 'Hooks',
