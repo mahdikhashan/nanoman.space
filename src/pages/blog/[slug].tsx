@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+import { Container } from '@/ui/Container';
+
 import { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router'
 
@@ -13,10 +15,12 @@ export default function Post({
 
   return (
     <>
-      <p>slug: {slug}</p>
-      <div className='max-w-screen-md'>
-        <div className="prose" dangerouslySetInnerHTML={{ __html: post.body }} />
-      </div>
+      <Container>
+        <p>slug: {slug}</p>
+        <div className='max-w-screen-md'>
+          <div className="prose" dangerouslySetInnerHTML={{ __html: post.body }} />
+        </div>
+      </Container>
     </>
   )
 }
