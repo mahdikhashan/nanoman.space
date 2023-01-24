@@ -15,7 +15,7 @@ export default function PostLink({
         pathname: '/blog/[slug]',
         query: { slug }
       }}
-      className="flex flex-row py-4 justify-between hover:text-orange-500 hover:scale-50"
+      className="flex flex-row py-4 justify-between hover:text-orange-500"
     >
       <div>{title}</div>
       <div className="text-zinc-500">
