@@ -73,7 +73,7 @@ export async function getServerSideProps() {
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
-      // throw new Error("Could not get posts!");
+      throw new Error("Could not get posts!");
     }
   }
 

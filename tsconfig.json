@@ -20,6 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts", "src/tests/index.test.js", "src/tests/index.test.js"],
   "exclude": ["node_modules", "src/*.test.ts"]
 }
