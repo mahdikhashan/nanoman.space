@@ -35,19 +35,10 @@ export default function Footer() {
 
   return (
     <>
-      <div className="flex flex-col text-xs md:flex-row mb-16 md:mb-4 gap-2 !items-center md:justify-between text-zinc-600 w-full">
+      <div className="flex flex-col text-xs mb-16 md:mb-4 gap-2 !items-center text-zinc-600 w-full">
         <span>
-          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All
-          Rights Reserved.
+          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All right reserved.
         </span>
-        <div id="social-media-link" className="hidden md:flex flex-row gap-4">
-          <ExternalLink href={'https://www.linkedin.com/in/mohi-k/'}>
-            <BsLinkedin className="hover:text-white text-2xl" />
-          </ExternalLink>
-          <ExternalLink href={'https://github.com/mohi-k'}>
-            <BsGithub className="hover:text-white text-2xl" />
-          </ExternalLink>
-        </div>
         <span className="flex flex-row items-center">
           <p>
             Created by the &nbsp;<b>Next.js</b>&nbsp; and
@@ -62,7 +53,7 @@ export default function Footer() {
           />
           {'.'}
         </span>
-        <div id="social-media-link" className="md:hidden flex flex-row gap-4">
+        <div id="social-media-link" className="flex flex-row gap-4">
           <ExternalLink href={'https://www.linkedin.com/in/mohi-k/'}>
             <BsLinkedin className="hover:text-white text-2xl" />
           </ExternalLink>
