@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { getCategories, getPostsData } from '@/lib/api';
-import { InferGetStaticPropsType } from 'next';
+import { InferGetServerSidePropsType } from 'next';
 
 import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
@@ -10,8 +10,8 @@ import { Post } from '@/lib/types';
 
 export default function HomePage({
   posts,
-  projects
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+  projects,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Container>
@@ -20,7 +20,6 @@ export default function HomePage({
             <div className="mt-12 max-w-screen-md space-y-4">
               <Info />
             </div>
-
             <div className="mt-22 max-w-screen-md space-y-4">
               <h1 className="md:text-2xl font-semibold text-orange-500">
                 Recent Blog Posts
@@ -64,12 +63,12 @@ export default function HomePage({
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
 
   if (butterToken) {
     try {
-      const blogPosts: Post[] = (await getPostsData()).posts;
+      const blogPosts = (await getPostsData()).posts;
       const projects = await getCategories();
 
       return { props: { posts: blogPosts, projects } };
