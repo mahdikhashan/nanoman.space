@@ -84,16 +84,14 @@ export async function getServerSideProps() {
     }
   }
 
-  if (env == 'production') {
-    if (butterToken) {
-      try {
-        const blogPosts: Post[] = (await getPostsData()).posts;
-        const projects: Category[] = await getCategories();
+  if (butterToken) {
+    try {
+      const blogPosts: Post[] = (await getPostsData()).posts;
+      const projects: Category[] = await getCategories();
 
-        return { props: { posts: blogPosts, projects } };
-      } catch (e) {
-        throw new Error('Could not get posts!');
-      }
+      return { props: { posts: blogPosts, projects } };
+    } catch (e) {
+      throw new Error('Could not get posts!');
     }
   }
 
