@@ -7,7 +7,7 @@ export default function Info() {
     <>
       <div className="inline-flex">
         <h1 className="text-4xl md:text-6xl font-semibold text-zinc-900 dark:text-white">
-          Mohi Khashan<span className="text-3xl cursor-pointer">🗣️</span>
+          Mohi Khashan
         </h1>
       </div>
       <p className="text-zinc-500 text-xl md:text-2xl text-left">
