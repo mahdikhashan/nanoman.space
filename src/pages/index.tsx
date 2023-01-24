@@ -4,6 +4,7 @@ import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetStaticPropsType } from 'next';
 
 import Info from '@/ui/Info';
+import PostLink from '@/ui/PostLink';
 import Container from '@/ui/Container';
 import { Post } from '@/lib/types';
 
@@ -27,19 +28,7 @@ export default function HomePage({
               <Suspense fallback={null}>
                 <div className="flex flex-col divide-y-[1px] divide-zinc-700">
                   {posts.map((post) => (
-                    <Link
-                      key={post.slug}
-                      href={{
-                        pathname: '/blog/[slug]',
-                        query: { slug: post.slug }
-                      }}
-                      className="flex flex-row py-4 justify-between hover:text-orange-500"
-                    >
-                      <div>{post.title}</div>
-                      <div className="text-zinc-500">
-                        {post.categories.map((category: any) => category.name)}
-                      </div>
-                    </Link>
+                    <PostLink key={post.slug} {...post} />
                   ))}
                   {!posts.length && <div>No Blog Posts found.</div>}
                 </div>
