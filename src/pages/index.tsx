@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
 
-import Link from 'next/link';
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetServerSidePropsType } from 'next';
 
 import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
+import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
 import { Category, Post } from '@/lib/types';
 
@@ -42,16 +42,7 @@ export default function HomePage({
               <Suspense fallback={null}>
                 <div className="flex-col space-y-2">
                   {projects.map((project) => (
-                    <Link
-                      href={`/`}
-                      key={project.slug}
-                      className="block space-y-1.5 rounded-lg border border-black/10 dark:border-white/10 px-4 py-3 hover:border-black/20 dark:hover:border-white/20 dark:bg-zinc-800 bg-white"
-                    >
-                      <div>{project.name}</div>
-                      <div className="line-clamp-3 text-sm text-zinc-400">
-                        {project.slug}
-                      </div>
-                    </Link>
+                    <ProjectLink key={project.slug} {...project} />
                   ))}
                   {!projects.length && <div>No Project found.</div>}
                 </div>
@@ -77,6 +68,7 @@ export async function getServerSideProps() {
   // const book = await res.json()
 
   const env = process.env.NODE_ENV;
+
   if (env == 'development' || 'test') {
     try {
       const blogPosts: Post[] = await (
@@ -90,7 +82,9 @@ export async function getServerSideProps() {
     } catch (e) {
       throw new Error('Could not get posts!');
     }
-  } else if (env == 'production') {
+  }
+
+  if (env == 'production') {
     if (butterToken) {
       try {
         const blogPosts: Post[] = (await getPostsData()).posts;
