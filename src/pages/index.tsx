@@ -69,7 +69,7 @@ export async function getServerSideProps() {
 
   const env = process.env.NODE_ENV;
 
-  if (env == 'development' || 'test') {
+  if (env === 'development') {
     try {
       const blogPosts: Post[] = await (
         await fetch('http://localhost:3000/posts')
@@ -80,7 +80,7 @@ export async function getServerSideProps() {
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
-      throw new Error('Could not get posts!');
+      throw new Error('Development or Test Env: Could not get posts!');
     }
   }
 
@@ -91,7 +91,7 @@ export async function getServerSideProps() {
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
-      throw new Error('Could not get posts!');
+      throw new Error('Production: Could not get posts!');
     }
   }
 

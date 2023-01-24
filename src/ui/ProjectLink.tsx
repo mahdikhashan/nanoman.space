@@ -1,4 +1,4 @@
-import { Category, Post } from '@/lib/types';
+import { Category } from '@/lib/types';
 import Link from 'next/link';
 
 type Props = Category;

@@ -1,5 +1,5 @@
 import { Post } from '@/lib/types';
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
 
 type Props = Post;
 
