@@ -26,9 +26,12 @@ export default function HomePage({
                 Recent Blog Posts
               </h1>
               <Suspense fallback={null}>
-                <div className="flex flex-col divide-y-[1px] divide-zinc-700">
+                <div className="flex flex-col">
                   {posts.map((post) => (
-                    <PostLink key={post.slug} {...post} />
+                    <>
+                      <PostLink key={post.slug} {...post} />
+                      <hr />
+                    </>
                   ))}
                   {!posts.length && <div>No Blog Posts found.</div>}
                 </div>
