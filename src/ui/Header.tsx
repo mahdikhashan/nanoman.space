@@ -65,20 +65,20 @@ export default function Header() {
                 );
               })}
           </div>
-          <div className="hidden md:inline-flex">
+          <div className="hidden md:flex h-full items-center">
             {header.map((link) => {
               const isActive = `/${link.slug}` === pathname;
 
               return (
                 !link?.isDisabled && (
-                  <div key={link.name}>
+                  <div key={link.name} className="justify-center">
                     {
                       <Link
                         href={!link?.redirect ? `/${link.slug}` : link.slug}
                         passHref={link?.redirect}
                         target={link?.redirect ? "_blank" : "_self"}
                         className={clsx(
-                          "flex items-baseline gap-1 mb-2 px-3 text-sm font-semibold uppercase text-orange-500",
+                          "flex items-baseline gap-1 px-3 text-sm font-semibold uppercase text-orange-500 h-full",
                           { "text-zinc-500 hover:text-zinc-300": !isActive }
                         )}
                       >
