@@ -1,7 +1,7 @@
 import { Post } from '@/lib/types';
 import Link from 'next/link';
 
-type Props = Post;
+export type Props = Pick<Post, 'slug' | 'title' | 'categories'>;
 
 export default function PostLink({
   slug,
@@ -15,7 +15,7 @@ export default function PostLink({
         pathname: '/blog/[slug]',
         query: { slug }
       }}
-      className="flex flex-row py-4 justify-between hover:text-orange-500"
+      className="flex flex-row py-4 justify-between hover:text-orange-500 transition ease-in-out delay-50 hover:scale-[1.025]"
     >
       <div>{title}</div>
       <div className="text-zinc-500">
