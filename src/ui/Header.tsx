@@ -67,7 +67,7 @@ export default function Header() {
           </div>
           <div className="hidden md:inline-flex">
             {header.map((link) => {
-              const isActive = link.slug === pathname;
+              const isActive = `/${link.slug}` === pathname;
 
               return (
                 !link?.isDisabled && (
@@ -78,8 +78,8 @@ export default function Header() {
                         passHref={link?.redirect}
                         target={link?.redirect ? "_blank" : "_self"}
                         className={clsx(
-                          "flex items-baseline gap-1 mb-2 px-3 text-sm font-semibold uppercase tracking-wider text-orange-500",
-                          { "text-zinc-500 hover:text-zinc-100": !isActive }
+                          "flex items-baseline gap-1 mb-2 px-3 text-sm font-semibold uppercase text-orange-500",
+                          { "text-zinc-500 hover:text-zinc-300": !isActive }
                         )}
                       >
                         {link?.name}
