@@ -14,16 +14,19 @@ export const handlers = [
       ctx.json<Post[]>(PostsResponse)
     )
   }),
+
   rest.get('http://localhost:3000/projects', (_req, res, ctx) => {
     return res(
       ctx.json<Category[]>(ProjectsResponse)
     )
   }),
+
   rest.get('/get-jokes', (_req, res, ctx) => {
     return res(
       ctx.body("this is from mock")
     )
   }),
+
   rest.get('https://mo.nanoman.space/api/get-jokes', (_req, res, ctx) => {
     return res(
       ctx.json({
@@ -31,6 +34,7 @@ export const handlers = [
       })
     )
   }),
+
   rest.get('https://api.nanoman.space/v2/here/', (_req, res, ctx) => {
     return res(
       ctx.json({
@@ -38,6 +42,7 @@ export const handlers = [
       })
     );
   }),
+
   // Post List
   rest.get(
     butterCMS(
@@ -51,4 +56,5 @@ export const handlers = [
       );
     }
   )
+
 ];
