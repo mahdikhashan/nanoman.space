@@ -50,7 +50,7 @@ export default function Container(props) {
             <div className="row-start-1">
               <Header />
             </div>
-            <div className="row-start-2 mt-12 space-x-6">{children}</div>
+            <div className="row-start-2 mt-12">{children}</div>
             <div className="row-start-3 row-end-4 mt-20 flex items-center justify-center">
               <Footer />
             </div>
