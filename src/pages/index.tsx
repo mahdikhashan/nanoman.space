@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetServerSidePropsType } from 'next';
+import Link from 'next/link';
 
 import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
@@ -22,9 +23,32 @@ export default function HomePage({
               <Info />
             </div>
             <div className="mt-22 max-w-screen-md space-y-4">
-              <h1 className="md:text-2xl font-semibold text-orange-500">
-                Recent Blog Posts
-              </h1>
+              <div className="flex flex-row items-end justify-between mb-5">
+                <h1 className="md:text-2xl font-semibold text-orange-500">
+                  Recent Blog Posts
+                </h1>
+                <Link
+                  className="flex items-center hover:underline mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
+                  href="/blog"
+                >
+                  Read all posts
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6 ml-1"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+                    ></path>
+                  </svg>
+                </Link>
+              </div>
+
               <Suspense fallback={null}>
                 <div className="flex flex-col">
                   {posts.map((post) => (
@@ -38,8 +62,8 @@ export default function HomePage({
               </Suspense>
             </div>
 
-            <div className="mt-22 max-w-screen-md space-y-4">
-              <h1 className="md:text-2xl font-semibold text-orange-500">
+            <div className="mt-32 max-w-screen-md space-y-4">
+              <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
                 Featured Projects
               </h1>
               <Suspense fallback={null}>
