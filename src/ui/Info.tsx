@@ -11,7 +11,7 @@ export default function Info() {
         </h1>
       </div>
       <p className="text-zinc-500 dark:text-gray-100 text-xl md:text-2xl text-left">
-        Front-End Engineer interested in how technology can enhance intuition
+        Software Engineer interested in how technology can enhance intuition
         and creativity. Experienced with{" "}
         <span className="text-orange-500 font-bold">Typescript</span>,{" "}
         <span className="text-orange-500 font-bold">React</span>,{" "}
