@@ -15,12 +15,12 @@ export type Post = {
   tags: Tag[],
   categories: Category[],
   author: Author
-}
+};
 
 export type Category = {
   name: string,
   slug: string
-}
+};
 
 export type Author = {
   bio: string,
@@ -35,6 +35,10 @@ export type Author = {
   pinterest_url: string,
   profile_image: string,
   twitter_handle: string
-}
+};
 
-export type Tag = {}
+export type Tag = {};
+
+export type Views = {
+  total: number;
+};

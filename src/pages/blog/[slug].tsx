@@ -1,8 +1,10 @@
 import Container from '@/ui/Container';
 import { getPost, getPostsData } from '@/lib/api';
-import type { Post } from '@/lib/types';
+import type { Post, Views } from '@/lib/types';
 import { format } from 'date-fns';
 import readingTime from 'reading-time';
+import useSWR from 'swr';
+import fetcher from '@/lib/fetcher';
 
 const PostTitle = ({ title }: Pick<Post, 'title'>) => {
   return (
@@ -14,7 +16,10 @@ const PostTitle = ({ title }: Pick<Post, 'title'>) => {
   );
 };
 
-export default function Post({ title, body, author, updated }: Post) {
+export default function Post({ title, body, author, updated, slug }: Post) {
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
+
   return (
     <>
       <Container>
@@ -26,11 +31,11 @@ export default function Post({ title, body, author, updated }: Post) {
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
-            {readingTime(body).text} • <span>182,232 views</span>
+            {readingTime(body).text} • <span>{views} views</span>
           </p>
         </div>
         <div
-          className="prose lg:prose-xl mt-5"
+          className="prose lg:prose-xl mt-5 dark:text-white"
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </Container>
