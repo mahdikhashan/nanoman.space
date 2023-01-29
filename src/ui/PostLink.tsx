@@ -1,3 +1,5 @@
+'use client';
+
 import { Post } from '@/lib/types';
 import Link from 'next/link';
 
@@ -10,11 +12,7 @@ export default function PostLink({
 }: Props) {
   return (
     <Link
-      key={slug}
-      href={{
-        pathname: '/blog/[slug]',
-        query: { slug }
-      }}
+      href={`/blog/${slug}`}
       className="flex flex-row py-4 justify-between hover:text-orange-500 transition ease-in-out delay-50 hover:scale-[1.025]"
     >
       <div>{title}</div>
