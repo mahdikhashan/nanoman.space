@@ -7,6 +7,7 @@
     "dev:debug": "DEBUG=* next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
     "cypress-install": "cypress install",
     "cypress-open": "cypress open",
     "test:unit:watch": "jest --watch",
