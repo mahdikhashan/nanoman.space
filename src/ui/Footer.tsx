@@ -54,10 +54,10 @@ export default function Footer() {
           {'.'}
         </span>
         <div id="social-media-link" className="flex flex-row gap-4">
-          <ExternalLink href={'https://www.linkedin.com/in/mohi-k/'}>
+          <ExternalLink href={'https://www.linkedin.com/in/mahdikhashan/'}>
             <BsLinkedin className="hover:text-white text-2xl" />
           </ExternalLink>
-          <ExternalLink href={'https://github.com/mohi-k'}>
+          <ExternalLink href={'https://github.com/mahdikhashan'}>
             <BsGithub className="hover:text-white text-2xl" />
           </ExternalLink>
         </div>
