@@ -1,6 +1,6 @@
 import Container from '@/ui/Container';
 import { getPost, getPostsData } from '@/lib/api';
-import type { Post, Views } from '@/lib/types';
+import type { Post, Views } from '@/types/buttercms';
 import { format } from 'date-fns';
 import readingTime from 'reading-time';
 import useSWR from 'swr';

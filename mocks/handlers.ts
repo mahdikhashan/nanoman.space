@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { Category, Post } from '@/lib/types';
+import { Category, Post } from '@/types/buttercms';
 
 import PostsResponse from './responses/posts.json';
 import ProjectsResponse from './responses/projects.json';

@@ -8,7 +8,10 @@ import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
 import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
-import { Category, Post } from '@/lib/types';
+import { Category, Post } from '@/types/buttercms';
+
+import type { Project } from '@/lib/projects';
+import { projects } from '@/lib/projects';
 
 export default function HomePage({
   posts,
@@ -68,7 +71,7 @@ export default function HomePage({
             <Suspense fallback={null}>
               <div className="flex-col space-y-2">
                 {projects.map((project) => (
-                  <ProjectLink key={project.slug} {...project} />
+                  project.featured && <ProjectLink key={project.id} {...project} />
                 ))}
                 {!projects.length && <div>No Project found.</div>}
               </div>
@@ -81,34 +84,24 @@ export default function HomePage({
 }
 
 export async function getServerSideProps() {
-  const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-  const env = process.env.NODE_ENV;
-
-  if (env === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     try {
+      
       const blogPosts: Post[] = await (
         await fetch('http://localhost:3000/posts')
-      ).json();
-      const projects: Category[] = await (
-        await fetch('http://localhost:3000/projects')
       ).json();
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
       throw new Error('Development or Test Env: Could not get posts!');
     }
-  }
-
-  if (butterToken) {
+  } else {
     try {
       const blogPosts: Post[] = (await getPostsData()).posts;
-      const projects: Category[] = await getCategories();
 
       return { props: { posts: blogPosts, projects } };
     } catch (e) {
       throw new Error('Production: Could not get posts!');
     }
   }
-
-  return { props: { posts: [], projects: [] } };
 }

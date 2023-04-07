@@ -3,8 +3,8 @@ module.exports = {
   important: true,
   darkMode: 'class',
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/ui/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./ui/**/*.{js,ts,jsx,tsx}",
     "./next.config.js"
   ],
   theme: {

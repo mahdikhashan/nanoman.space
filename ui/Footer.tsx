@@ -24,7 +24,6 @@ export default function Footer() {
 
   const { resolvedTheme } = useTheme();
 
-  // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -37,7 +36,8 @@ export default function Footer() {
     <>
       <div className="flex flex-col text-xs mb-16 md:mb-4 gap-2 !items-center text-zinc-600 w-full">
         <span>
-          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mohi Khashan. All right reserved.
+          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mahdi Khashan. All
+          right reserved.
         </span>
         <span className="flex flex-row items-center">
           <p>

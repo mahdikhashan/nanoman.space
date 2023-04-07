@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 
 import PostLink from './PostLink';
 import type { Props as PostLinkProps } from './PostLink';
-import { Category } from '@/lib/types';
+import { Category } from '@/types/buttercms';
 
 const categories: Category[] = 
   [{ name: 'example-category', slug: 'example-category-slug' }]
