@@ -12,8 +12,8 @@ export default function Container(props) {
   const { children, customMeta } = props
   const meta = {
     title: "Mahdi Khashan | Front-end Engineer.",
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: "https://leerob.io/static/images/lee-banner.png",
+    description: `Front-end developer, JavaScript enthusiast, and opensource enthusiast.`,
+    image: "https://mo.nanoman.space/static/images/mo-banner.png",
     type: "website",
     ...customMeta,
   };
@@ -24,15 +24,15 @@ export default function Container(props) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://leerob.io${router.asPath}`} />
-        <link rel="canonical" href={`https://leerob.io${router.asPath}`} />
+        <meta property="og:url" content={`https://mo.nanoman.space${router.asPath}`} />
+        <link rel="canonical" href={`https://mo.nanoman.space$${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Mahdi Khashan" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@leeerob" />
+        <meta name="twitter:site" content="@__nanoman__" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
