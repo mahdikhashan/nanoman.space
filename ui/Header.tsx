@@ -30,7 +30,7 @@ export default function Header() {
         <div
           onClick={() => setOpen(!isOpen)}
           className={clsx(
-            'md:hidden !p-y-4 cursor-pointer fixed top-4',
+            'md:hidden !p-y-4 cursor-pointer fixed bottom-4',
             'left-4 right-4 z-10 text-white bg-zinc-800 border-2 rounded-2xl',
             {
               'h-18 border-white text-white': !isOpen,
