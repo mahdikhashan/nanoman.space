@@ -8,8 +8,8 @@ import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
 import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
-import { Post } from '@/types/buttercms';
 
+import { Post } from '@/types/buttercms';
 import { projects } from '@/lib/projects';
 
 export default function HomePage({
