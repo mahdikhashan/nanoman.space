@@ -11,7 +11,7 @@ export default function Container(props) {
   const router = useRouter();
   const { children, customMeta } = props
   const meta = {
-    title: "Mohi Khashan | Front-end Engineer.",
+    title: "Mahdi Khashan | Front-end Engineer.",
     description: `Front-end developer, JavaScript enthusiast, and course creator.`,
     image: "https://leerob.io/static/images/lee-banner.png",
     type: "website",
@@ -27,7 +27,7 @@ export default function Container(props) {
         <meta property="og:url" content={`https://leerob.io${router.asPath}`} />
         <link rel="canonical" href={`https://leerob.io${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Mohi Khashan" />
+        <meta property="og:site_name" content="Mahdi Khashan" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />

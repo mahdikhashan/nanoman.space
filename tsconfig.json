@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "types": ["jest"],
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }

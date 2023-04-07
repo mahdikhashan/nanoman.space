@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Post } from '@/lib/types';
+import { Post } from '@/types/buttercms';
 
 import { getCategories, getPostsData } from '@/lib/api';
 import { InferGetStaticPropsType } from 'next';
