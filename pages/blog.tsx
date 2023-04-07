@@ -19,7 +19,6 @@ export default function BlogPage({
   })
 
   return (
-    <>
       <Container>
         <div className="space-y-6 font-mono">
           <div className="space-y-8">
@@ -101,7 +100,6 @@ export default function BlogPage({
           </div>
         </div>
       </Container>
-    </>
   );
 }
 

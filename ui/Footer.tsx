@@ -33,36 +33,34 @@ export default function Footer() {
   }
 
   return (
-    <>
-      <div className="flex flex-col text-xs mb-16 md:mb-4 gap-2 !items-center text-zinc-600 w-full">
-        <span>
-          {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mahdi Khashan. All
-          right reserved.
-        </span>
-        <span className="flex flex-row items-center">
-          <p>
-            Created by the &nbsp;<b>Next.js</b>&nbsp; and
-          </p>
-          &nbsp;
-          <Image
-            src={resolvedTheme === 'dark' ? '/butter-w.png' : '/butter-b.png'}
-            unoptimized
-            alt="Butter CMS"
-            width={100}
-            height={0}
-          />
-          {'.'}
-        </span>
-        <div id="social-media-link" className="flex flex-row gap-4">
-          <ExternalLink href={'https://www.linkedin.com/in/mahdikhashan/'}>
-            <BsLinkedin className="hover:text-white text-2xl" />
-          </ExternalLink>
-          <ExternalLink href={'https://github.com/mahdikhashan'}>
-            <BsGithub className="hover:text-white text-2xl" />
-          </ExternalLink>
-        </div>
+    <div className="flex flex-col text-xs mb-16 md:mb-4 gap-2 !items-center text-zinc-600 w-full">
+      <span>
+        {'©'} &nbsp; <span>{d.getFullYear()}</span> &nbsp; Mahdi Khashan. All
+        right reserved.
+      </span>
+      <span className="flex flex-row items-center">
+        <p>
+          Created by the &nbsp;<b>Next.js</b>&nbsp; and
+        </p>
+        &nbsp;
+        <Image
+          src={resolvedTheme === 'dark' ? '/butter-w.png' : '/butter-b.png'}
+          unoptimized
+          alt="Butter CMS"
+          width={100}
+          height={0}
+        />
+        {'.'}
+      </span>
+      <div id="social-media-link" className="flex flex-row gap-4">
+        <ExternalLink href={'https://www.linkedin.com/in/mahdikhashan/'}>
+          <BsLinkedin className="hover:text-white text-2xl" />
+        </ExternalLink>
+        <ExternalLink href={'https://github.com/mahdikhashan'}>
+          <BsGithub className="hover:text-white text-2xl" />
+        </ExternalLink>
       </div>
-    </>
+    </div>
   );
 }
 
