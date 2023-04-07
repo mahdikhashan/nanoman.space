@@ -31,7 +31,7 @@ const projects: Project[] = [
       'storybook'
     ],
     featured: true,
-    type: 'sideproject'
+    type: 'Side Project'
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const projects: Project[] = [
     description: 'Aparat VOD Platform API Wrapper',
     skills: ['python', 'REST-API', 'unit-test'],
     featured: false,
-    type: 'python-package'
+    type: 'Python Package'
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const projects: Project[] = [
       'Directive for Vue 3 to run a method on clicking outside of the binded element',
     skills: ['javascript', 'vue3', 'vue-test-utils', 'jest'],
     featured: false,
-    type: 'npm-package'
+    type: 'NPM Package'
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const projects: Project[] = [
     github: 'https://github.com/mahdikhashan/vercel-express-proxy',
     website: 'https://github.com/mahdikhashan/vercel-express-proxy',
     description: '🪞 Proxy server based on Express for Vercel platform',
-    type: 'template',
+    type: 'Template / CLI',
     featured: false,
     skills: ['javascript', 'node.js', 'express.js', 'vercel']
   },
@@ -78,7 +78,7 @@ const projects: Project[] = [
     github: 'https://github.com/mahdikhashan/vercel-express-template',
     website: 'https://github.com/mahdikhashan/vercel-express-template',
     description: '🔥 Express Server Template for Vercel',
-    type: 'template',
+    type: 'Template / CLI',
     featured: false,
     skills: ['javascript', 'node.js', 'express.js', 'vercel']
   },
@@ -90,7 +90,7 @@ const projects: Project[] = [
     github: 'https://github.com/mahdikhashan/veemoji',
     website: 'https://veemoji.surge.sh/',
     description: 'A dead simple emoji component library',
-    type: 'npm-package',
+    type: 'NPM Package',
     featured: false,
     skills: ['javascript', 'vue', 'npm']
   }

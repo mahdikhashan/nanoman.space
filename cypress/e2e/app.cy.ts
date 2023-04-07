@@ -13,5 +13,3 @@ describe('Navigation', () => {
     cy.get('h1').contains('All Blog Posts')
   })
 })
-
-export {};

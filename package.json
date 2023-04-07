@@ -10,9 +10,7 @@
     "test": "jest",
     "cypress-install": "cypress install",
     "cypress-open": "cypress open",
-    "test:unit:watch": "jest --watch",
-    "test:unit": "echo 'unit tests running'",
-    "test:e2e": "echo 'e2e tests running'",
+    "test:watch": "jest --watch",
     "lint": "next lint"
   },
   "dependencies": {

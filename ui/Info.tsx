@@ -1,4 +1,4 @@
-import { useNinja } from "@/hooks/use-ninja";
+import { useNinja } from '@/hooks/use-ninja';
 
 export default function Info() {
   const { allSound } = useNinja();
@@ -11,22 +11,30 @@ export default function Info() {
         </h1>
       </div>
       <p className="text-zinc-500 dark:text-gray-100 text-xl md:text-2xl text-left">
-        Software Engineer interested in how technology can enhance intuition
-        and creativity. Experienced with{" "}
-        <span className="text-orange-500 font-bold">Typescript</span>,{" "}
-        <span className="text-orange-500 font-bold">React</span>,{" "}
-        <span className="text-orange-500 font-bold">Cypress</span>,{" "}
-        <span className="text-orange-500 font-bold">GraphQL</span>,{" "}
-        <span className="text-orange-500 font-bold">CI/CD</span> and{" "}
+        Software Engineer interested in how technology can enhance intuition and
+        creativity.
+      </p>
+
+      <p className="text-zinc-500 dark:text-gray-100 text-xl md:text-2xl text-left">
+        Experienced with{' '}
+        <span className="text-orange-500 font-bold">TypeScript</span>,{' '}
+        <span className="text-orange-500 font-bold">React</span>,{' '}
+        <span className="text-orange-500 font-bold">Cypress</span>,{' '}
+        <span className="text-orange-500 font-bold">GraphQL</span>,{' '}
+        <span className="text-orange-500 font-bold">CI/CD</span> and{' '}
         <span className="text-orange-500 font-bold">HTML/CSS</span>.
       </p>
       <p className="text-zinc-500 dark:text-gray-100 text-2xl">
-        As a{" "}
-        <span className="cursor-pointer" onClick={() => allSound[Math.floor(Math.random() * allSound.length)]()}>
+        As a{' '}
+        <span
+          className="cursor-pointer"
+          onClick={() =>
+            allSound[Math.floor(Math.random() * allSound.length)]()
+          }
+        >
           🥷
-        </span>{" "}
-        I&apos;ve built, developed and shipped +10 products (+100K
-        users).
+        </span>{' '}
+        I&apos;ve built, developed and shipped +10 products (+100K users).
       </p>
     </>
   );
