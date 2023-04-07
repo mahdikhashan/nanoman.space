@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { getCategories, getPostsData } from '@/lib/api';
+import { getPostsData } from '@/lib/api';
 import { InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 
@@ -8,9 +8,8 @@ import Info from '@/ui/Info';
 import PostLink from '@/ui/PostLink';
 import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
-import { Category, Post } from '@/types/buttercms';
+import { Post } from '@/types/buttercms';
 
-import type { Project } from '@/lib/projects';
 import { projects } from '@/lib/projects';
 
 export default function HomePage({
