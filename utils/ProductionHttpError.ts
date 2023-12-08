@@ -1,5 +1,1 @@
-class ProductionHttpError {
-  constructor() {}
-}
-
-export default ProductionHttpError;
+export class ProductionHttpError {}
