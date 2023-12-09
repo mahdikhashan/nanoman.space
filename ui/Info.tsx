@@ -25,7 +25,14 @@ export default function Info() {
       </h3>
       <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
         I particularly enjoy working with React and TypeScript on web
-        applications but also like animated landing pages, UX and CRO.
+        applications, improving DX by creating tools, libraries and contributing
+        to accessible design systems. I also have a passion and seeking the
+        opportunity creating animated landing pages and optimizing user
+        experiences (
+        <a className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500 hover:cursor-pointer" href='mailto:mo@nanoman.space'>
+          maybe for you?
+        </a>
+        ).
       </p>
       <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
         I learned a lot from the open source community and like to give back to
@@ -36,12 +43,12 @@ export default function Info() {
         >
           contribute to common tools
         </a>
-        , improving documentation and {' '}
+        , improving documentation and{' '}
         <a
           className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500"
           href="https://www.npmjs.com/~mahdikhashan"
         >
-          npm packages
+          {' '} npm packages
         </a>
         .
       </p>
