@@ -21,7 +21,7 @@ export default function Footer() {
       </span>
       <span className="flex flex-row items-center">
         <p>
-          Created by ❤️ with &nbsp;<b>Next.js</b> and <b>React.js</b>
+          Created by ❤️ with&nbsp;<b>Next.js</b> and <b>React.js</b>
         </p>
         {'.'}
       </span>
