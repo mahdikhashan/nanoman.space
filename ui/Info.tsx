@@ -3,13 +3,19 @@ import Image from 'next/image';
 export default function Info() {
   return (
     <>
-      <div className="flex flex-row gap-8 flex-1 justify-start items-center">
-        <Image className="rounded-full" src="/img.png" alt="Mahdi Khashan" width="150" height="150" />
+      <div className="flex flex-col gap-8 flex-1 justify-start items-center">
+        <Image
+          className="rounded-full"
+          src="/img.png"
+          alt="Mahdi Khashan"
+          width="150"
+          height="150"
+        />
         <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 dark:text-white">
           Mahdi Khashan
         </h1>
       </div>
-      <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose pt-8">
+      <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose pt-16">
         Frontend developer from 🇮🇷 living in 🇦🇹 and interested in how technology
         can enhance creativity.
       </p>
@@ -29,8 +35,8 @@ export default function Info() {
           href="https://github.com/mahdikhashan"
         >
           contribute to common tools
-        </a>{' '}
-        and{' '}
+        </a>
+        , improving documentation and {' '}
         <a
           className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500"
           href="https://www.npmjs.com/~mahdikhashan"
@@ -42,7 +48,14 @@ export default function Info() {
       <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
         Outside of my engagement in development, I find pleasure in playing
         badminton 🏸, exploring new human languages 🌐, and revisiting episodes
-        of "The Office" 🎥 for another round.
+        of{' '}
+        <a
+          className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500 hover:cursor-pointer"
+          href="https://www.imdb.com/title/tt0386676/"
+        >
+          "The Office"
+        </a>{' '}
+        🎥 for another round.
       </p>
     </>
   );
