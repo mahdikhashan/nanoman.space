@@ -20,7 +20,7 @@ export default function BlogPage({
         <div className="space-y-6 font-mono">
           <div className="space-y-8">
             <div className="mt-12 max-w-screen-md space-y-4 prose">
-              <h1 className="text-4xl">All Blog Posts</h1>
+              <h1 className="text-4xl dark:text-white">All Blog Posts</h1>
               <label className="relative block">
                 <span className="sr-only">Search</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-4">
