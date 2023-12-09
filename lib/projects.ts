@@ -1,3 +1,5 @@
+import { Project } from "@/types";
+
 const projects: Project[] = [
   {
     id: 1,
