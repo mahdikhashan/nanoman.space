@@ -1,15 +1,4 @@
-type Project = {
-  id: number;
-  name: string;
-  icon: string;
-  slug: string;
-  github: string;
-  website: string;
-  description: string;
-  skills: string[];
-  featured: boolean;
-  type: string;
-};
+import { Project } from "@/types";
 
 const projects: Project[] = [
   {
@@ -42,7 +31,7 @@ const projects: Project[] = [
     website: 'https://pypi.org/project/aparat-python/',
     description: 'Aparat VOD Platform API Wrapper',
     skills: ['python', 'REST-API', 'unit-test'],
-    featured: false,
+    featured: true,
     type: 'Python Package'
   },
   {
@@ -55,7 +44,7 @@ const projects: Project[] = [
     description:
       'Directive for Vue 3 to run a method on clicking outside of the binded element',
     skills: ['javascript', 'vue3', 'vue-test-utils', 'jest'],
-    featured: false,
+    featured: true,
     type: 'NPM Package'
   },
   {
@@ -91,7 +80,7 @@ const projects: Project[] = [
     website: 'https://veemoji.surge.sh/',
     description: 'A dead simple emoji component library',
     type: 'NPM Package',
-    featured: false,
+    featured: true,
     skills: ['javascript', 'vue', 'npm']
   }
 ];
