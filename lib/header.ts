@@ -1,17 +1,6 @@
-type Item = {
-  name: string;
-  slug: string;
-  isDisabled?: boolean;
-  redirect?: boolean;
-  items?: {
-    name: string;
-    slug: string;
-    description?: string;
-    isDisabled?: boolean;
-  }[];
-};
+import { HeaderItem } from "@/types";
 
-export const header: Item[] = [
+export const header: HeaderItem[] = [
   {
     name: 'Home',
     slug: ''
@@ -57,8 +46,8 @@ export const header: Item[] = [
   },
   {
     name: 'Twitter',
-    slug: 'twitter',
+    slug: 'https://twitter.com/__nanoman__',
     redirect: true,
-    isDisabled: true
+    isDisabled: false
   },
 ];
