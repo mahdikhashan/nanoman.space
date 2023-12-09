@@ -1,16 +1,3 @@
-type Project = {
-  id: number;
-  name: string;
-  icon: string;
-  slug: string;
-  github: string;
-  website: string;
-  description: string;
-  skills: string[];
-  featured: boolean;
-  type: string;
-};
-
 const projects: Project[] = [
   {
     id: 1,
