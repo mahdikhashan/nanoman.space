@@ -13,7 +13,7 @@ const HAS_BLOG_POSTS = false
 export default function HomePage() {
   return (
     <Container>
-      <div className="space-y-6">
+      <div className="space-y-20">
         <div className="space-y-8">
           <div className="mt-12 max-w-screen-lg space-y-4">
             <Info />
@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>}
           </div>
 
-          <div className="mt-32 max-w-screen-md space-y-4">
+          <div className="mt-64 max-w-screen-md space-y-4">
             <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
               Featured Projects
             </h1>

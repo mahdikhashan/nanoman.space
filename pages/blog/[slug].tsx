@@ -1,22 +1,32 @@
 import Container from '@/ui/Container';
-import { getPost, getPostsData } from '@/lib/api';
-import type { Post, Views } from '@/types/buttercms';
-import { format } from 'date-fns';
-import readingTime from 'reading-time';
-import useSWR from 'swr';
-import fetcher from '@/lib/fetcher';
 
-const PostTitle = ({ title }: Pick<Post, 'title'>) => {
+import { format } from 'date-fns';
+
+import readingTime from 'reading-time';
+
+const PostTitle = ({ title }: { title: string }) => {
   return (
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-        {title}
-      </h1>
+    <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      {title}
+    </h1>
   );
 };
 
-export default function Post({ title, body, author, updated, slug }: Post) {
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  const views = data?.total;
+export default function Post({
+  title,
+  body,
+  author,
+  updated,
+  slug
+}: {
+  title: string;
+  body: string;
+  author: string;
+  updated: boolean;
+  slug: string;
+}) {
+  // const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = 2;
 
   return (
     <>
@@ -25,7 +35,8 @@ export default function Post({ title, body, author, updated, slug }: Post) {
         <div className="flex flex-col items-start justify-between w-full mt-4 md:flex-row md:items-center">
           <div className="flex items-center">
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              {`${author.first_name} ${author.last_name}`} / {format(new Date(updated), 'MMMM dd, yyyy')}
+              {`${"First Name"} ${"Last Name"}`} /{' '}
+              {format(new Date(), 'MMMM dd, yyyy')}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
