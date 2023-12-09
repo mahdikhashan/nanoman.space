@@ -1,30 +1,25 @@
 import { Suspense } from 'react';
 
-import { getPostsData } from '@/lib/api';
-import { InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 
 import Info from '@/ui/Info';
-import PostLink from '@/ui/PostLink';
 import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
-import { Post } from '@/types/buttercms';
 
 import { projects } from '@/lib/projects';
 
-export default function HomePage({
-  posts,
-  projects
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+const HAS_BLOG_POSTS = false
+
+export default function HomePage() {
   return (
     <Container>
       <div className="space-y-6">
         <div className="space-y-8">
-          <div className="mt-12 max-w-screen-md space-y-4">
+          <div className="mt-12 max-w-screen-lg space-y-4">
             <Info />
           </div>
-          <div className="mt-22 max-w-screen-md space-y-4">
-            <div className="flex flex-row items-end justify-between mb-5">
+          <div className="mt-22 max-w-screen-lg space-y-4">
+            {HAS_BLOG_POSTS && <div className="flex flex-row items-end justify-between mb-5">
               <h1 className="md:text-2xl font-semibold text-orange-500">
                 Recent Blog Posts
               </h1>
@@ -48,27 +43,15 @@ export default function HomePage({
                   ></path>
                 </svg>
               </Link>
-            </div>
-
-            <Suspense fallback={null}>
-              <div className="flex flex-col">
-                {posts.map((post) => (
-                  <>
-                    <PostLink key={post.slug} {...post} />
-                    <hr />
-                  </>
-                ))}
-                {!posts.length && <div>No Blog Posts found.</div>}
-              </div>
-            </Suspense>
+            </div>}
           </div>
 
           <div className="mt-32 max-w-screen-md space-y-4">
             <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
               Featured Projects
             </h1>
-            <Suspense fallback={null}>
-              <div className="flex-col space-y-2">
+            <Suspense fallback={<div>loading...</div>}>
+              <div className="flex-col space-y-4">
                 {projects.map((project) => (
                   project.featured && <ProjectLink key={project.id} {...project} />
                 ))}
@@ -80,27 +63,4 @@ export default function HomePage({
       </div>
     </Container>
   );
-}
-
-export async function getServerSideProps() {
-  if (process.env.NODE_ENV === 'development') {
-    try {
-      
-      const blogPosts: Post[] = await (
-        await fetch('http://localhost:3000/posts')
-      ).json();
-
-      return { props: { posts: blogPosts, projects } };
-    } catch (e) {
-      throw new Error('Development or Test Env: Could not get posts!');
-    }
-  } else {
-    try {
-      const blogPosts: Post[] = (await getPostsData()).posts;
-
-      return { props: { posts: blogPosts, projects } };
-    } catch (e) {
-      throw new Error('Production: Could not get posts!');
-    }
-  }
 }
