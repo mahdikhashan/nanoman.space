@@ -1,6 +1,6 @@
-import Script from 'next/script';
-
 import { Suspense } from 'react';
+
+import Script from 'next/script';
 
 import Link from 'next/link';
 
@@ -9,6 +9,9 @@ import ProjectLink from '@/ui/ProjectLink';
 import Container from '@/ui/Container';
 
 import { projects } from '@/lib/projects';
+
+import { images } from '@/lib/images';
+import PhotoGallery from '@/ui/PhotoGallary';
 
 const HAS_BLOG_POSTS = false;
 
@@ -74,6 +77,18 @@ export default function HomePage() {
                     )
                 )}
                 {!projects.length && <div>No Project found.</div>}
+              </div>
+            </Suspense>
+          </div>
+
+          <div className="mt-64 max-w-screen-md space-y-4">
+            <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
+              Photos
+            </h1>
+            <Suspense fallback={<div>loading...</div>}>
+              <div className="flex-col space-y-4">
+                <PhotoGallery />
+                {!images.length && <div>No Photo found.</div>}
               </div>
             </Suspense>
           </div>
