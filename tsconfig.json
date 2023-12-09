@@ -14,12 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest"],
+    "types": ["jest", "**/*.d.ts"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts", "src/tests/index.test.js", "src/tests/index.test.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts", "src/tests/index.test.js", "src/tests/index.test.js", "pages/blog/posts/sample-blog-post.mdx"],
   "exclude": ["node_modules", "src/*.test.ts"]
 }
