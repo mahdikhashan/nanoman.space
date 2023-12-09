@@ -1,6 +1,7 @@
 'use client';
 
-import { Post } from '@/types/buttercms';
+import { Post } from '@/types';
+
 import Link from 'next/link';
 
 export type Props = Pick<Post, 'slug' | 'title' | 'categories'>;

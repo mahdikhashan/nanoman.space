@@ -1,6 +1,13 @@
 import { type Photo } from "react-photo-album"
 
-type Project = {
+export type Category = { name: string }
+export type Post = {
+  title: string,
+  slug: string,
+  categories: Category[]
+}
+
+export type Project = {
   id: number;
   name: string;
   icon: string;
@@ -13,7 +20,7 @@ type Project = {
   type: string;
 };
 
-type HeaderItem = {
+export type HeaderItem = {
   name: string;
   slug: string;
   isDisabled?: boolean;
@@ -26,4 +33,4 @@ type HeaderItem = {
   }[];
 };
 
-type PhotoImage = Photo
+export type PhotoImage = Photo

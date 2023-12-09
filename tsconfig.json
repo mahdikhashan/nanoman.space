@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -14,12 +15,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest", "**/*.d.ts"],
-    "baseUrl": ".",
+    "types": ["jest"],
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts", "src/tests/index.test.js", "src/tests/index.test.js", "pages/blog/posts/sample-blog-post.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./cypress.d.ts", "src/tests/index.test.js", "src/tests/index.test.js", "**/*.mdx", "**/*.d.ts"],
   "exclude": ["node_modules", "src/*.test.ts"]
 }

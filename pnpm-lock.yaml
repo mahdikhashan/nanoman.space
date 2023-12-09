@@ -23,9 +23,6 @@ dependencies:
   '@types/jest':
     specifier: ^29.4.0
     version: 29.5.11
-  '@types/mdx':
-    specifier: ^2.0.10
-    version: 2.0.10
   '@types/node':
     specifier: 18.11.18
     version: 18.11.18
@@ -103,6 +100,9 @@ devDependencies:
   '@testing-library/react':
     specifier: ^13.4.0
     version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+  '@types/mdx':
+    specifier: ^2.0.10
+    version: 2.0.10
   autoprefixer:
     specifier: ^10.4.13
     version: 10.4.16(postcss@8.4.32)
@@ -1250,7 +1250,6 @@ packages:
 
   /@types/mdx@2.0.10:
     resolution: {integrity: sha512-Rllzc5KHk0Al5/WANwgSPl1/CwjqCy+AZrGd78zuK+jO9aDM6ffblZ+zIjgPNAaEBmlO0RYDvLNh7wD0zKVgEg==}
-    dev: false
 
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}

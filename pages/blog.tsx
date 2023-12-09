@@ -1,16 +1,15 @@
-import Link from 'next/link';
-
-import { InferGetStaticPropsType } from 'next';
-
-import { BsSearch } from 'react-icons/bs';
-import Container from '@/ui/Container';
 import { Suspense, useState } from 'react';
 
-export default function BlogPage({
-  posts,
-  projects
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+import Link from 'next/link';
+
+import { BsSearch } from 'react-icons/bs';
+
+import Container from '@/ui/Container';
+
+export default function BlogPage() {
   const [searchValue, setSearchValue] = useState('');
+
+  const posts = []
   const filteredBlogPosts = posts.filter((post) => {
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   })
@@ -98,21 +97,4 @@ export default function BlogPage({
         </div>
       </Container>
   );
-}
-
-export async function getStaticProps() {
-  const butterToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY;
-
-  if (butterToken) {
-    try {
-      const blogPosts: Post[] = (await getPostsData()).posts;
-      const projects = await getCategories();
-
-      return { props: { posts: blogPosts, projects } };
-    } catch (e) {
-      // throw new Error("Could not get posts!");
-    }
-  }
-
-  return { props: { posts: [], projects: [] } };
 }
