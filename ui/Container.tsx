@@ -11,7 +11,7 @@ export default function Container(props) {
   const router = useRouter();
   const { children, customMeta } = props
   const meta = {
-    title: "Mahdi Khashan | Front-end Engineer.",
+    title: "Mahdi Khashan | Frontend Developer.",
     description: `Front-end developer, JavaScript enthusiast, and opensource enthusiast.`,
     image: "https://mo.nanoman.space/static/images/mo-banner.png",
     type: "website",
