@@ -19,13 +19,13 @@ export default function BlogPage() {
 
   return (
     <Container>
-      <div className="space-y-6 font-mono">
+      <div className="space-y-6 font-mono w-[90vw]">
         <div className="space-y-8">
           <div className="mt-12 max-w-screen-md space-y-4 prose">
             <h1 className="text-4xl dark:text-white">Blog</h1>
           </div>
 
-          <div className="mt-22 max-w-screen-md space-y-4">
+          <div className="mt-22 max-w-full space-y-4">
             <h1 className="md:text-2xl font-semibold text-orange-500">
               Most Popular Posts
             </h1>

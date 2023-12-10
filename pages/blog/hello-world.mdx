@@ -1,0 +1,10 @@
+import MdxLayout from "@/layouts/Blog";
+import { PostTitle } from "@/ui/PostTitle"
+
+<h1 className="dark:text-white">Welcome to my blog post!</h1>
+
+### Hello World! 😊
+
+export default function MDXPage({ children }) {
+  return <MdxLayout>{children}</MdxLayout>;
+}
