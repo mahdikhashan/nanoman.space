@@ -25,7 +25,7 @@ export default function Header() {
   }
 
   return (
-    <div className="relative flex font-mono justify-start md:justify-between md:w-1/3">
+    <div className="relative flex font-mono justify-start md:justify-between lg:w-1/2 w-full">
       <div>
         <div
           onClick={() => setOpen(!isOpen)}

@@ -49,8 +49,8 @@ export default function Container(props) {
       <main className="min-h-screen mx-auto overflow-y-auto bg-gray-100 dark:bg-zinc-800 font-mono">
         <div className="mx-auto flex-grow">
           <div className="flex flex-col items-center gap-8 py-8">
-            <div className='flex md:justify-center justify-start w-full px-6'>
-            <Header />
+            <div className="flex md:justify-center justify-start px-6 w-full">
+              <Header />
             </div>
             {renderBanner && (
               <div className="row-start-2 mt-12 w-full" id="banner">

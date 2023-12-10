@@ -32,7 +32,6 @@ export default function BlogPage() {
             <Suspense fallback={<span>loading...</span>}>
               <div className="flex flex-col divide-y-[1px] divide-zinc-700">
                 {posts.map((post, index) => {
-                  console.log(post);
                   return (
                     <Link
                       key={index}
