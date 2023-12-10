@@ -1,20 +1,21 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head';
 
-import Header from "./Header";
-import Footer from "./Footer";
+import { useRouter } from 'next/router';
+
+import Header from './Header';
+import Footer from './Footer';
 
 export default function Container(props) {
-  const router = useRouter();
-  const { children, customMeta } = props
-  
+  const { children, customMeta, renderBanner } = props;
   const meta = {
-    title: "Mahdi Khashan | Frontend Developer.",
+    title: 'Mahdi Khashan | Frontend Developer.',
     description: `Front-end developer, JavaScript enthusiast, and opensource enthusiast.`,
-    image: "https://mo.nanoman.space/static/images/mo-banner.png",
-    type: "website",
-    ...customMeta,
+    image: 'https://mo.nanoman.space/static/images/mo-banner.png',
+    type: 'website',
+    ...customMeta
   };
+
+  const router = useRouter();
 
   return (
     <>
@@ -22,8 +23,14 @@ export default function Container(props) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://mo.nanoman.space${router.asPath}`} />
-        <link rel="canonical" href={`https://mo.nanoman.space$${router.asPath}`} />
+        <meta
+          property="og:url"
+          content={`https://mo.nanoman.space${router.asPath}`}
+        />
+        <link
+          rel="canonical"
+          href={`https://mo.nanoman.space$${router.asPath}`}
+        />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Mahdi Khashan" />
         <meta property="og:description" content={meta.description} />
@@ -39,17 +46,21 @@ export default function Container(props) {
         )}
       </Head>
 
-      <main
-        id="skip"
-        className="min-h-screen mx-auto overflow-y-auto max-w-3xl bg-gray-100 dark:bg-zinc-800 font-mono"
-      >
-        <div className="container mx-auto flex-grow">
-          <div className="grid grid-cols-1 gap-y-8 p-4 md:py-8 md:px-12">
-            <div className="row-start-1">
-              <Header />
+      <main className="min-h-screen mx-auto overflow-y-auto bg-gray-100 dark:bg-zinc-800 font-mono">
+        <div className="mx-auto flex-grow">
+          <div className="flex flex-col items-center gap-8 py-8">
+            <div className='flex md:justify-center justify-start w-full px-6'>
+            <Header />
             </div>
-            <div className="row-start-2 mt-12">{children}</div>
-            <div className="row-start-3 row-end-4 mt-20 flex items-center justify-center">
+            {renderBanner && (
+              <div className="row-start-2 mt-12 w-full" id="banner">
+                {renderBanner()}
+              </div>
+            )}
+            <div className="flex flex-row mt-20 items-center justify-between max-w-2xl px-6">
+              {children}
+            </div>
+            <div className="mt-8 flex items-center justify-center">
               <Footer />
             </div>
           </div>

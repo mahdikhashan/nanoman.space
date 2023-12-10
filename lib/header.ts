@@ -33,6 +33,10 @@ export const header: HeaderItem[] = [
     ],
   },
   {
+    name: 'Travel',
+    slug: 'travels'
+  },
+  {
     name: 'LinkedIn',
     slug: 'https://www.linkedin.com/in/mahdikhashan/',
     redirect: true,
