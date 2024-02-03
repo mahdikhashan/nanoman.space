@@ -26,10 +26,15 @@ export default function Info() {
       <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
         I particularly enjoy working with React and TypeScript on web
         applications, improving DX by creating tools, libraries and contributing
-        to accessible design systems. I also have a passion and seeking the
-        opportunity creating animated landing pages and optimizing user
-        experiences (
-        <a className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500 hover:cursor-pointer" href='mailto:mo@nanoman.space'>
+        to accessible design systems.
+      </p>
+      <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
+        I also have a passion and seeking the opportunity creating animated
+        landing pages and optimizing user experiences (
+        <a
+          className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500 hover:cursor-pointer"
+          href="mailto:mo@nanoman.space"
+        >
           maybe for you?
         </a>
         ).
@@ -48,13 +53,14 @@ export default function Info() {
           className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500"
           href="https://www.npmjs.com/~mahdikhashan"
         >
-          {' '} npm packages
+          {' '}
+          npm packages
         </a>
         .
       </p>
       <p className="text-zinc-500 dark:text-gray-100 text-2xl text-left align-middle leading-loose">
         Outside of my engagement in development, I find pleasure in playing
-        badminton 🏸, exploring new human languages 🌐, and revisiting episodes
+        badminton 🏸, exploring new human languages 🌐, currently German 🇩🇪, and revisiting episodes
         of{' '}
         <a
           className="underline decoration-dashed decoration-orange-500 hover:bg-orange-500 hover:cursor-pointer"
