@@ -3,7 +3,8 @@ import { HeaderItem } from "@/types";
 export const header: HeaderItem[] = [
   {
     name: 'Home',
-    slug: ''
+    slug: '',
+    isDisabled: true,
   },
   {
     name: 'About',
@@ -12,11 +13,13 @@ export const header: HeaderItem[] = [
   },
   {
     name: 'Blog',
-    slug: 'blog'
+    slug: 'blog',
+    isDisabled: true
   },
   {
     name: 'Projects',
     slug: 'projects',
+    isDisabled: true,
     items: [
       {
         name: 'Hooks',
@@ -34,7 +37,8 @@ export const header: HeaderItem[] = [
   },
   {
     name: 'Travel',
-    slug: 'travels'
+    slug: 'travels',
+    isDisabled: true
   },
   {
     name: 'LinkedIn',
@@ -52,6 +56,6 @@ export const header: HeaderItem[] = [
     name: 'Twitter',
     slug: 'https://twitter.com/__nanoman__',
     redirect: true,
-    isDisabled: false
+    isDisabled: true
   },
 ];
