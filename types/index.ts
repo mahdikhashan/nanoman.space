@@ -20,6 +20,22 @@ export type Project = {
   type: string;
 };
 
+export type Experience = {
+  id: number;
+  company: string;
+  icon?: string;
+  position: string;
+  startDate: string;
+  finishDate: string;
+  url?: string;
+}
+
+export type Skill = {
+  id: number;
+  category: string;
+  tools: string[];
+}
+
 export type HeaderItem = {
   name: string;
   slug: string;

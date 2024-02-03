@@ -14,6 +14,9 @@ import { images } from '@/lib/images';
 import PhotoGallery from '@/ui/PhotoGallary';
 
 const HAS_BLOG_POSTS = false;
+const PHOTO_SECTION_VISIBLE = false;
+const PROJECT_SECTION_VISIBLE = true;
+const EXPERIENCE_SECTION_VISIBLE = true;
 
 export default function HomePage() {
   return (
@@ -64,34 +67,59 @@ export default function HomePage() {
             )}
           </div>
 
-          <div className="mt-64 max-w-screen-md space-y-4">
-            <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
-              Projects
-            </h1>
-            <Suspense fallback={<div>loading...</div>}>
-              <div className="flex-col space-y-4">
-                {projects.map(
-                  (project) =>
-                    project.featured && (
-                      <ProjectLink key={project.id} {...project} />
-                    )
-                )}
-                {!projects.length && <div>No Project found.</div>}
-              </div>
-            </Suspense>
-          </div>
+          {PROJECT_SECTION_VISIBLE && (
+            <div className="mt-64 max-w-screen-md space-y-4">
+              <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
+                Projects
+              </h1>
+              <Suspense fallback={<div>loading...</div>}>
+                <div className="flex-col space-y-4">
+                  {projects.map(
+                    (project) =>
+                      project.featured && (
+                        <ProjectLink key={project.id} {...project} />
+                      )
+                  )}
+                  {!projects.length && <div>No Project found.</div>}
+                </div>
+              </Suspense>
+            </div>
+          )}
 
-          <div className="mt-64 max-w-screen-md space-y-4">
-            <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
-              Photos
-            </h1>
-            <Suspense fallback={<div>loading...</div>}>
-              <div className="flex-col space-y-4">
-                <PhotoGallery />
-                {!images.length && <div>No Photo found.</div>}
-              </div>
-            </Suspense>
-          </div>
+          {
+            EXPERIENCE_SECTION_VISIBLE && (
+              <div className="mt-64 max-w-screen-md space-y-4">
+              <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
+                Experience
+              </h1>
+              <Suspense fallback={<div>loading...</div>}>
+                <div className="flex-col space-y-4">
+                  {projects.map(
+                    (project) =>
+                      project.featured && (
+                        <ProjectLink key={project.id} {...project} />
+                      )
+                  )}
+                  {!projects.length && <div>No Project found.</div>}
+                </div>
+              </Suspense>
+            </div>
+            )
+          }
+
+          {PHOTO_SECTION_VISIBLE && (
+            <div className="mt-64 max-w-screen-md space-y-4">
+              <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
+                Photos
+              </h1>
+              <Suspense fallback={<div>loading...</div>}>
+                <div className="flex-col space-y-4">
+                  <PhotoGallery />
+                  {!images.length && <div>No Photo found.</div>}
+                </div>
+              </Suspense>
+            </div>
+          )}
         </div>
       </div>
     </Container>
