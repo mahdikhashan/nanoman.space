@@ -66,7 +66,7 @@ export default function HomePage() {
 
           <div className="mt-64 max-w-screen-md space-y-4">
             <h1 className="md:text-2xl font-semibold text-orange-500 mb-5">
-              Featured Projects
+              Projects
             </h1>
             <Suspense fallback={<div>loading...</div>}>
               <div className="flex-col space-y-4">
